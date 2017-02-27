@@ -33,7 +33,8 @@ class LoginController: BaseController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        
+        self.getSharedData().isLoggedIn  = true
+        self.closeScreen()
     }
 
     @IBAction func registerAction(_ sender: Any) {

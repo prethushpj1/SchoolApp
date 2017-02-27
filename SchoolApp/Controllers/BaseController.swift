@@ -11,12 +11,17 @@ import UIKit
 class BaseController: UIViewController {
 
     let sharedData = SharedData()
+    var wallMenu: WallMenu?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.getSharedData().isLoggedIn = true
-        // Do any additional setup after loading the view.
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        //self.getSharedData().isLoggedIn = true
+        
+        wallMenu = WallMenu.getInstance
+        wallMenu?.delegate = self
+        wallMenu?.dataArray = ["Home", "Attendance", "Fees", "Marksheet" , "Time table", "Messages" ,"Exmas", "School Diary", "Log out"]
+        wallMenu?.imageNameArray = ["home" , "tickWhite", "fees-dark", "marklistLight", "calendarLight", "email", "email","email", "logout"]
+        wallMenu?.title = "School Name"
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,47 +30,11 @@ class BaseController: UIViewController {
     }
     
     func openScreen(WithName name: ScreenName,
-                    paramters: [AnyHashable: Any]?,
-                    completion: (() -> Void)?){
-//        self.openController(self.getControllerWithStoryboardID(name.string), animated: true, paramters: paramters, completion: completion)
+                    paramters: [AnyHashable: Any]?){
         self.performSegue(withIdentifier: name.string, sender: self)
-    }
-    
-    fileprivate func openController(_ controller: UIViewController,
-                        animated: Bool,
-                        paramters: [AnyHashable: Any]?,
-                        completion: (() -> Void)?){
-        controller.modalPresentationStyle = .overCurrentContext
-        self.presentControllerWithTransition(controller)
-    }
-    
-    fileprivate func getControllerWithStoryboardID(_ id: String) -> BaseController{
-        return (UIStoryboard(name: "Main", bundle: Bundle(for: BaseController.self))).instantiateViewController(withIdentifier: id) as! BaseController
-    }
-    
-    fileprivate func presentControllerWithTransition(_ controller: UIViewController){
-        
-        let transition = CATransition()
-        transition.duration = 0.3
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromLeft
-        controller.view.isHidden = true
-        self.present(controller, animated: false) {
-            controller.view.isHidden = false
-            controller.view.layer.add(transition,
-                                      forKey: kCATransition)
-        }
     }
 
     func closeScreen(){
-        
-//        let transition = CATransition()
-//        transition.duration = 0.3
-//        transition.type = kCATransitionReveal
-//        transition.subtype = kCATransitionFromRight
-//        self.view.window?.layer.add(transition, forKey: kCATransition)
-//        self.view.isHidden = true
-//        self.dismiss(animated: true, completion: completion)
         let _ = self.navigationController?.popViewController(animated: true)
     }
     
@@ -75,5 +44,46 @@ class BaseController: UIViewController {
     
     func hideBackButton(){
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
+    }
+    
+    func hideStatusBar(status: Bool){
+        self.navigationController?.setNavigationBarHidden(status, animated: false)
+    }
+    
+    func showWallMenu(){
+        wallMenu?.showWallMenuOnView(self.view)
+    }
+    
+    func hideWallMenu(){
+        wallMenu?.hideWallMenu()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.hideWallMenu()
+    }
+}
+
+extension BaseController: WallMenuDelegate{
+    func didSelectWallMenuAtIndex(_ index: Int) {
+        self.hideWallMenu()
+        switch index {
+        case 0:
+            if  !self.navigationController!.topViewController!.isKind(of: HomeController.self) {
+                self.closeScreen()
+            }
+            break
+        case 1:
+            if  !self.navigationController!.topViewController!.isKind(of: MyAttendanceController.self) {
+                self.openScreen(WithName: .myAttendace, paramters: nil)
+            }
+            break
+            
+        case 8:
+            self.getSharedData().isLoggedIn = false
+            self.openScreen(WithName: .login, paramters: nil)
+            break
+        default:
+            break
+        }
     }
 }

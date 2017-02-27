@@ -12,6 +12,7 @@ enum ScreenName{
     case login
     case register
     case home
+    case myAttendace
 }
 
 extension ScreenName{
@@ -24,6 +25,8 @@ extension ScreenName{
             return "registerController"
         case .home:
             return "homeController"
+        case .myAttendace:
+            return "myAttendance"
         }
     }
 }

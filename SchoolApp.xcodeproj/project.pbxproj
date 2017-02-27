@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042583E51E5F51CD00C05877 /* HomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042583E41E5F51CD00C05877 /* HomeMessageCell.swift */; };
 		04C9689B1E59AAEF0071F774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9689A1E59AAEF0071F774 /* AppDelegate.swift */; };
 		04C968A21E59AAEF0071F774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C968A11E59AAEF0071F774 /* Assets.xcassets */; };
 		04C968A51E59AAEF0071F774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C968A31E59AAEF0071F774 /* LaunchScreen.storyboard */; };
 		04C968B11E59C5600071F774 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C968B01E59C5600071F774 /* HomeController.swift */; };
 		04C968B41E59C58F0071F774 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C968B31E59C58F0071F774 /* RegisterController.swift */; };
-		04D0809E1E5DFC2A00E5E35B /* CommonHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D0809D1E5DFC2A00E5E35B /* CommonHeader.xib */; };
 		04D080A41E5DFC3300E5E35B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D080A01E5DFC3300E5E35B /* LaunchScreen.storyboard */; };
 		04D080A51E5DFC3300E5E35B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D080A21E5DFC3300E5E35B /* Main.storyboard */; };
 		04D080A81E5E00F500E5E35B /* HomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D080A71E5E00F500E5E35B /* HomeMenuCell.swift */; };
@@ -21,9 +21,14 @@
 		04ECAD551E5B566700F55A13 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD541E5B566700F55A13 /* BaseController.swift */; };
 		04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD561E5B577600F55A13 /* LoginController.swift */; };
 		04ECAD5A1E5B57A600F55A13 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD591E5B57A600F55A13 /* Constants.swift */; };
+		04F0256D1E613D0500E466A9 /* WallMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0256A1E613D0500E466A9 /* WallMenu.swift */; };
+		04F0256E1E613D0500E466A9 /* WallMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F0256B1E613D0500E466A9 /* WallMenu.xib */; };
+		04F0256F1E613D0500E466A9 /* WallMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F0256C1E613D0500E466A9 /* WallMenuCell.xib */; };
+		04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F025711E61DEE300E466A9 /* MyAttendanceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042583E41E5F51CD00C05877 /* HomeMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMessageCell.swift; sourceTree = "<group>"; };
 		04C968971E59AAEF0071F774 /* SchoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C9689A1E59AAEF0071F774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C968A11E59AAEF0071F774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,7 +36,6 @@
 		04C968A61E59AAEF0071F774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C968B01E59C5600071F774 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		04C968B31E59C58F0071F774 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
-		04D0809D1E5DFC2A00E5E35B /* CommonHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonHeader.xib; sourceTree = "<group>"; };
 		04D080A11E5DFC3300E5E35B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D080A31E5DFC3300E5E35B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		04D080A71E5E00F500E5E35B /* HomeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuCell.swift; sourceTree = "<group>"; };
@@ -40,6 +44,10 @@
 		04ECAD541E5B566700F55A13 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		04ECAD561E5B577600F55A13 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		04ECAD591E5B57A600F55A13 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04F0256A1E613D0500E466A9 /* WallMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallMenu.swift; sourceTree = "<group>"; };
+		04F0256B1E613D0500E466A9 /* WallMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenu.xib; sourceTree = "<group>"; };
+		04F0256C1E613D0500E466A9 /* WallMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenuCell.xib; sourceTree = "<group>"; };
+		04F025711E61DEE300E466A9 /* MyAttendanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAttendanceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +95,11 @@
 		04C968AD1E59C5230071F774 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				04C968B21E59C57E0071F774 /* Register */,
+				04F025701E61DEC500E466A9 /* MyAttendance */,
+				04ECAD541E5B566700F55A13 /* BaseController.swift */,
 				04C968AF1E59C5490071F774 /* Home */,
 				04C968AE1E59C5410071F774 /* Login */,
-				04ECAD541E5B566700F55A13 /* BaseController.swift */,
+				04C968B21E59C57E0071F774 /* Register */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -123,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				04D0809F1E5DFC3300E5E35B /* Base.lproj */,
-				04D0809D1E5DFC2A00E5E35B /* CommonHeader.xib */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 			children = (
 				04D080A71E5E00F500E5E35B /* HomeMenuCell.swift */,
 				04D080A91E5E0F1100E5E35B /* HomeActivityCell.swift */,
+				042583E41E5F51CD00C05877 /* HomeMessageCell.swift */,
 			);
 			path = ListCells;
 			sourceTree = "<group>";
@@ -149,10 +158,29 @@
 		04ECAD581E5B578C00F55A13 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				04F025691E613D0500E466A9 /* WallMenu */,
 				04ECAD591E5B57A600F55A13 /* Constants.swift */,
 				04D791011E5CA6570015B8B4 /* SharedData.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		04F025691E613D0500E466A9 /* WallMenu */ = {
+			isa = PBXGroup;
+			children = (
+				04F0256A1E613D0500E466A9 /* WallMenu.swift */,
+				04F0256B1E613D0500E466A9 /* WallMenu.xib */,
+				04F0256C1E613D0500E466A9 /* WallMenuCell.xib */,
+			);
+			path = WallMenu;
+			sourceTree = "<group>";
+		};
+		04F025701E61DEC500E466A9 /* MyAttendance */ = {
+			isa = PBXGroup;
+			children = (
+				04F025711E61DEE300E466A9 /* MyAttendanceController.swift */,
+			);
+			name = MyAttendance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,11 +243,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D0809E1E5DFC2A00E5E35B /* CommonHeader.xib in Resources */,
+				04F0256F1E613D0500E466A9 /* WallMenuCell.xib in Resources */,
 				04D080A51E5DFC3300E5E35B /* Main.storyboard in Resources */,
 				04D080A41E5DFC3300E5E35B /* LaunchScreen.storyboard in Resources */,
 				04C968A51E59AAEF0071F774 /* LaunchScreen.storyboard in Resources */,
 				04C968A21E59AAEF0071F774 /* Assets.xcassets in Resources */,
+				04F0256E1E613D0500E466A9 /* WallMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,9 +262,12 @@
 				04C9689B1E59AAEF0071F774 /* AppDelegate.swift in Sources */,
 				04D080AA1E5E0F1100E5E35B /* HomeActivityCell.swift in Sources */,
 				04D791021E5CA6570015B8B4 /* SharedData.swift in Sources */,
+				04F0256D1E613D0500E466A9 /* WallMenu.swift in Sources */,
 				04ECAD551E5B566700F55A13 /* BaseController.swift in Sources */,
 				04D080A81E5E00F500E5E35B /* HomeMenuCell.swift in Sources */,
 				04C968B41E59C58F0071F774 /* RegisterController.swift in Sources */,
+				042583E51E5F51CD00C05877 /* HomeMessageCell.swift in Sources */,
+				04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */,
 				04C968B11E59C5600071F774 /* HomeController.swift in Sources */,
 				04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */,
 				04ECAD5A1E5B57A600F55A13 /* Constants.swift in Sources */,

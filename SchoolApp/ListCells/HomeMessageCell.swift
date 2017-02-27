@@ -1,20 +1,19 @@
 //
-//  HomeActivityCell.swift
+//  HomeMessageCell.swift
 //  SchoolApp
 //
-//  Created by Prethush on 22/02/17.
+//  Created by Prethush on 23/02/17.
 //  Copyright © 2017 AITS Inc. All rights reserved.
 //
 
 import UIKit
 
-class HomeActivityCell: UITableViewCell {
+class HomeMessageCell: UITableViewCell {
 
-    @IBOutlet weak var btnLeftClick: UIButton!
-    @IBOutlet weak var btnRightClick: UIButton!
-    @IBOutlet weak var lblActivityDate: UILabel!
-    @IBOutlet weak var lblActivitytime: UILabel!
-    @IBOutlet weak var lblActivityDescription: UILabel!
+    @IBOutlet weak var lblMessageDescription: UILabel!
+    @IBOutlet weak var lblMessageDate: UILabel!
+    @IBOutlet weak var lblTeacherName: UILabel!
+    @IBOutlet weak var lblSubjectName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

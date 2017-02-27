@@ -16,7 +16,7 @@ class RegisterController: BaseController {
     @IBOutlet weak var vxAddress: UIView!
     @IBOutlet weak var vxPassword: UIView!
     @IBOutlet weak var vxRePassword: UIView!
-    
+    @IBOutlet weak var backButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +37,8 @@ class RegisterController: BaseController {
         
         vxRePassword.layer.borderColor = UIColor.gray.cgColor
         vxRePassword.layer.borderWidth = 1.0
+        
+        self.backButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +47,6 @@ class RegisterController: BaseController {
     }
 
     @IBAction func registerAction(_ sender: Any) {
-        self.closeScreen()
+        
     }
 }

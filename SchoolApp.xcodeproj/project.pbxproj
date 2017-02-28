@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		042583E51E5F51CD00C05877 /* HomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042583E41E5F51CD00C05877 /* HomeMessageCell.swift */; };
+		04BAA61C1E65EF0A005BEC52 /* AttendanceReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */; };
 		04C9689B1E59AAEF0071F774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9689A1E59AAEF0071F774 /* AppDelegate.swift */; };
 		04C968A21E59AAEF0071F774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C968A11E59AAEF0071F774 /* Assets.xcassets */; };
 		04C968A51E59AAEF0071F774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C968A31E59AAEF0071F774 /* LaunchScreen.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		042583E41E5F51CD00C05877 /* HomeMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMessageCell.swift; sourceTree = "<group>"; };
+		04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceReportController.swift; sourceTree = "<group>"; };
 		04C968971E59AAEF0071F774 /* SchoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C9689A1E59AAEF0071F774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C968A11E59AAEF0071F774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				04F025711E61DEE300E466A9 /* MyAttendanceController.swift */,
+				04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */,
 			);
 			name = MyAttendance;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				04F0256D1E613D0500E466A9 /* WallMenu.swift in Sources */,
 				04ECAD551E5B566700F55A13 /* BaseController.swift in Sources */,
 				04D080A81E5E00F500E5E35B /* HomeMenuCell.swift in Sources */,
+				04BAA61C1E65EF0A005BEC52 /* AttendanceReportController.swift in Sources */,
 				04C968B41E59C58F0071F774 /* RegisterController.swift in Sources */,
 				042583E51E5F51CD00C05877 /* HomeMessageCell.swift in Sources */,
 				04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */,

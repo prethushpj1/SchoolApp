@@ -23,6 +23,9 @@
 		04ECAD551E5B566700F55A13 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD541E5B566700F55A13 /* BaseController.swift */; };
 		04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD561E5B577600F55A13 /* LoginController.swift */; };
 		04ECAD5A1E5B57A600F55A13 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD591E5B57A600F55A13 /* Constants.swift */; };
+		04EE55811E672A3700766515 /* AttendanceReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE55801E672A3700766515 /* AttendanceReportCell.swift */; };
+		04EE55841E67423E00766515 /* MyChildrensController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE55831E67423E00766515 /* MyChildrensController.swift */; };
+		04EE55861E67431900766515 /* MyChildrenListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE55851E67431900766515 /* MyChildrenListController.swift */; };
 		04F0256D1E613D0500E466A9 /* WallMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0256A1E613D0500E466A9 /* WallMenu.swift */; };
 		04F0256E1E613D0500E466A9 /* WallMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F0256B1E613D0500E466A9 /* WallMenu.xib */; };
 		04F0256F1E613D0500E466A9 /* WallMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F0256C1E613D0500E466A9 /* WallMenuCell.xib */; };
@@ -48,6 +51,9 @@
 		04ECAD541E5B566700F55A13 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		04ECAD561E5B577600F55A13 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		04ECAD591E5B57A600F55A13 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04EE55801E672A3700766515 /* AttendanceReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceReportCell.swift; sourceTree = "<group>"; };
+		04EE55831E67423E00766515 /* MyChildrensController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrensController.swift; sourceTree = "<group>"; };
+		04EE55851E67431900766515 /* MyChildrenListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrenListController.swift; sourceTree = "<group>"; };
 		04F0256A1E613D0500E466A9 /* WallMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallMenu.swift; sourceTree = "<group>"; };
 		04F0256B1E613D0500E466A9 /* WallMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenu.xib; sourceTree = "<group>"; };
 		04F0256C1E613D0500E466A9 /* WallMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenuCell.xib; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 		04C968AD1E59C5230071F774 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04EE55821E6741DE00766515 /* My Childrens */,
 				04F025701E61DEC500E466A9 /* MyAttendance */,
 				04ECAD541E5B566700F55A13 /* BaseController.swift */,
 				04C968AF1E59C5490071F774 /* Home */,
@@ -156,6 +163,7 @@
 				04D080A91E5E0F1100E5E35B /* HomeActivityCell.swift */,
 				042583E41E5F51CD00C05877 /* HomeMessageCell.swift */,
 				04D29A4F1E64AA9A00A0A6C8 /* AttendanceCell.swift */,
+				04EE55801E672A3700766515 /* AttendanceReportCell.swift */,
 			);
 			path = ListCells;
 			sourceTree = "<group>";
@@ -168,6 +176,15 @@
 				04D791011E5CA6570015B8B4 /* SharedData.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		04EE55821E6741DE00766515 /* My Childrens */ = {
+			isa = PBXGroup;
+			children = (
+				04EE55831E67423E00766515 /* MyChildrensController.swift */,
+				04EE55851E67431900766515 /* MyChildrenListController.swift */,
+			);
+			name = "My Childrens";
 			sourceTree = "<group>";
 		};
 		04F025691E613D0500E466A9 /* WallMenu */ = {
@@ -267,6 +284,7 @@
 			files = (
 				04C9689B1E59AAEF0071F774 /* AppDelegate.swift in Sources */,
 				04D080AA1E5E0F1100E5E35B /* HomeActivityCell.swift in Sources */,
+				04EE55861E67431900766515 /* MyChildrenListController.swift in Sources */,
 				04D791021E5CA6570015B8B4 /* SharedData.swift in Sources */,
 				04F0256D1E613D0500E466A9 /* WallMenu.swift in Sources */,
 				04ECAD551E5B566700F55A13 /* BaseController.swift in Sources */,
@@ -277,7 +295,9 @@
 				04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */,
 				04C968B11E59C5600071F774 /* HomeController.swift in Sources */,
 				04D29A501E64AA9A00A0A6C8 /* AttendanceCell.swift in Sources */,
+				04EE55841E67423E00766515 /* MyChildrensController.swift in Sources */,
 				04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */,
+				04EE55811E672A3700766515 /* AttendanceReportCell.swift in Sources */,
 				04ECAD5A1E5B57A600F55A13 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  APIManager.swift
+//  EntityBase.swift
 //  SchoolApp
 //
 //  Created by Prethush on 04/03/17.
@@ -8,7 +8,10 @@
 
 import UIKit
 
-class APIManager: NSObject {
+@objc protocol IEntityProtocol {
     
+}
+
+class EntityBase: NSObject {
     
 }

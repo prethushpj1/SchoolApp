@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041BF2771E69E97400D85B68 /* MyChildrensListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BF2761E69E97400D85B68 /* MyChildrensListCell.swift */; };
 		042583E51E5F51CD00C05877 /* HomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042583E41E5F51CD00C05877 /* HomeMessageCell.swift */; };
 		04BAA61C1E65EF0A005BEC52 /* AttendanceReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */; };
 		04C9689B1E59AAEF0071F774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9689A1E59AAEF0071F774 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 		04D080AA1E5E0F1100E5E35B /* HomeActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D080A91E5E0F1100E5E35B /* HomeActivityCell.swift */; };
 		04D29A501E64AA9A00A0A6C8 /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D29A4F1E64AA9A00A0A6C8 /* AttendanceCell.swift */; };
 		04D791021E5CA6570015B8B4 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D791011E5CA6570015B8B4 /* SharedData.swift */; };
+		04ECABC81E6ABB9E00CABBB6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECABC71E6ABB9E00CABBB6 /* APIManager.swift */; };
 		04ECAD551E5B566700F55A13 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD541E5B566700F55A13 /* BaseController.swift */; };
 		04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD561E5B577600F55A13 /* LoginController.swift */; };
 		04ECAD5A1E5B57A600F55A13 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD591E5B57A600F55A13 /* Constants.swift */; };
@@ -33,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041BF2761E69E97400D85B68 /* MyChildrensListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrensListCell.swift; sourceTree = "<group>"; };
 		042583E41E5F51CD00C05877 /* HomeMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMessageCell.swift; sourceTree = "<group>"; };
 		04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceReportController.swift; sourceTree = "<group>"; };
 		04C968971E59AAEF0071F774 /* SchoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +51,7 @@
 		04D080A91E5E0F1100E5E35B /* HomeActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeActivityCell.swift; sourceTree = "<group>"; };
 		04D29A4F1E64AA9A00A0A6C8 /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
 		04D791011E5CA6570015B8B4 /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		04ECABC71E6ABB9E00CABBB6 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		04ECAD541E5B566700F55A13 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		04ECAD561E5B577600F55A13 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		04ECAD591E5B57A600F55A13 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		04C968991E59AAEF0071F774 /* SchoolApp */ = {
 			isa = PBXGroup;
 			children = (
+				04ECABC61E6ABB8E00CABBB6 /* Network */,
 				04D080A61E5E008400E5E35B /* ListCells */,
 				04D0809C1E5DFC2A00E5E35B /* Layouts */,
 				04ECAD581E5B578C00F55A13 /* Helpers */,
@@ -164,8 +169,17 @@
 				042583E41E5F51CD00C05877 /* HomeMessageCell.swift */,
 				04D29A4F1E64AA9A00A0A6C8 /* AttendanceCell.swift */,
 				04EE55801E672A3700766515 /* AttendanceReportCell.swift */,
+				041BF2761E69E97400D85B68 /* MyChildrensListCell.swift */,
 			);
 			path = ListCells;
+			sourceTree = "<group>";
+		};
+		04ECABC61E6ABB8E00CABBB6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				04ECABC71E6ABB9E00CABBB6 /* APIManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		04ECAD581E5B578C00F55A13 /* Helpers */ = {
@@ -283,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C9689B1E59AAEF0071F774 /* AppDelegate.swift in Sources */,
+				04ECABC81E6ABB9E00CABBB6 /* APIManager.swift in Sources */,
 				04D080AA1E5E0F1100E5E35B /* HomeActivityCell.swift in Sources */,
 				04EE55861E67431900766515 /* MyChildrenListController.swift in Sources */,
 				04D791021E5CA6570015B8B4 /* SharedData.swift in Sources */,
@@ -294,6 +309,7 @@
 				042583E51E5F51CD00C05877 /* HomeMessageCell.swift in Sources */,
 				04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */,
 				04C968B11E59C5600071F774 /* HomeController.swift in Sources */,
+				041BF2771E69E97400D85B68 /* MyChildrensListCell.swift in Sources */,
 				04D29A501E64AA9A00A0A6C8 /* AttendanceCell.swift in Sources */,
 				04EE55841E67423E00766515 /* MyChildrensController.swift in Sources */,
 				04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */,

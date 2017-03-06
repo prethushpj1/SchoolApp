@@ -13,16 +13,11 @@ class ENFee: Mappable {
     
     var feeID: Int?
     var feeName: String?
-//    @SerializedName("Amount")
-//    public long Amount;
-//    @SerializedName("AmountPaid")
-//    public long AmountPaid;
-//    @SerializedName("PaidStatus")
-//    public int PaidStatus;
-//    @SerializedName("LastDate")
-//    public String LastDate;
-//    @SerializedName("Fine")
-//    public long Fine;
+    var amount: Double?
+    var amountPaid: Double?
+    var paidStatus: Int?
+    var lastDate: String?
+    var fine: Double?
     
     required init?(map: Map) {
         mapping(map: map)
@@ -31,5 +26,10 @@ class ENFee: Mappable {
     func mapping(map: Map) {
         feeID       <- map["FeeID"]
         feeName     <- map["FeeName"]
+        amount      <- map["Amount"]
+        amountPaid  <- map["AmountPaid"]
+        paidStatus  <- map["PaidStatus"]
+        lastDate    <- map["LastDate"]
+        fine        <- map["Fine"]
     }
 }

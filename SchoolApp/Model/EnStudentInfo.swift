@@ -24,12 +24,9 @@ class EnStudentInfo: Mappable {
     var imageURL: String?
     var marksheet: [ENmark]?
     var absenceInfo: ENAbsence?
-//    @SerializedName("Fees")
-//    public ArrayList<ENFee> Fees;
-//    @SerializedName("Events")
-//    public ArrayList<ENEvent> Events;
-//    @SerializedName("Status")
-//    public int Status;
+    var fees: [ENFee]?
+    var events: [EnEvent]?
+    var status: Int?
     
     
     required init?(map: Map) {
@@ -50,6 +47,9 @@ class EnStudentInfo: Mappable {
         imageURL            <- map["ImageURL"]
         marksheet           <- map["Marksheet"]
         absenceInfo         <- map["AbsenceInfo"]
+        fees                <- map["Fees"]
+        events              <- map["Events"]
+        status              <- map["Status"]
     }
         
 }

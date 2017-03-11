@@ -37,6 +37,8 @@ class HomeController: BaseController {
         self.imgHeader.layer.masksToBounds = true
         
         self.btnMenu.addTarget(self, action: #selector(menuButtonPressed), for: .touchUpInside)
+        
+        self.getAPIServices().getHomeData()
     }
 
     override func didReceiveMemoryWarning() {

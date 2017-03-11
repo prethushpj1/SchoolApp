@@ -7,84 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041BF2771E69E97400D85B68 /* MyChildrensListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BF2761E69E97400D85B68 /* MyChildrensListCell.swift */; };
-		042583E51E5F51CD00C05877 /* HomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042583E41E5F51CD00C05877 /* HomeMessageCell.swift */; };
-		043862921E6DCFAB001151E0 /* EnParentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043862911E6DCFAB001151E0 /* EnParentInfo.swift */; };
-		043862941E6DD5B7001151E0 /* EnHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043862931E6DD5B7001151E0 /* EnHomeData.swift */; };
+		042DC2171E71C2C8002C2C0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2131E71C2C8002C2C0F /* LaunchScreen.storyboard */; };
+		042DC2181E71C2C8002C2C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2151E71C2C8002C2C0F /* Main.storyboard */; };
+		042DC2281E71C33E002C2C0F /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC21B1E71C33E002C2C0F /* AttendanceCell.swift */; };
+		042DC2291E71C33E002C2C0F /* AttendanceReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC21C1E71C33E002C2C0F /* AttendanceReportCell.swift */; };
+		042DC22A1E71C33E002C2C0F /* HomeActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC21D1E71C33E002C2C0F /* HomeActivityCell.swift */; };
+		042DC22B1E71C33E002C2C0F /* HomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC21E1E71C33E002C2C0F /* HomeMenuCell.swift */; };
+		042DC22C1E71C33E002C2C0F /* HomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC21F1E71C33E002C2C0F /* HomeMessageCell.swift */; };
+		042DC22D1E71C33E002C2C0F /* MyChildrensListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2201E71C33E002C2C0F /* MyChildrensListCell.swift */; };
+		042DC22E1E71C33E002C2C0F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2221E71C33E002C2C0F /* Constants.swift */; };
+		042DC22F1E71C33E002C2C0F /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2231E71C33E002C2C0F /* SharedData.swift */; };
+		042DC2301E71C33E002C2C0F /* WallMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2251E71C33E002C2C0F /* WallMenu.swift */; };
+		042DC2311E71C33E002C2C0F /* WallMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2261E71C33E002C2C0F /* WallMenu.xib */; };
+		042DC2321E71C33E002C2C0F /* WallMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2271E71C33E002C2C0F /* WallMenuCell.xib */; };
+		042DC2351E71C359002C2C0F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2341E71C359002C2C0F /* APIManager.swift */; };
+		042DC2421E71C387002C2C0F /* EnAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2371E71C387002C2C0F /* EnAd.swift */; };
+		042DC2431E71C387002C2C0F /* EnAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2381E71C387002C2C0F /* EnAddress.swift */; };
+		042DC2441E71C387002C2C0F /* EnEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2391E71C387002C2C0F /* EnEvent.swift */; };
+		042DC2451E71C387002C2C0F /* ENFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC23A1E71C387002C2C0F /* ENFee.swift */; };
+		042DC2461E71C387002C2C0F /* EnHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC23B1E71C387002C2C0F /* EnHomeData.swift */; };
+		042DC2471E71C387002C2C0F /* ENmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC23C1E71C387002C2C0F /* ENmark.swift */; };
+		042DC2481E71C387002C2C0F /* EnParentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC23D1E71C387002C2C0F /* EnParentInfo.swift */; };
+		042DC2491E71C387002C2C0F /* EnSchoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC23E1E71C387002C2C0F /* EnSchoolInfo.swift */; };
+		042DC24A1E71C387002C2C0F /* EnStudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC23F1E71C387002C2C0F /* EnStudentInfo.swift */; };
+		042DC24B1E71C387002C2C0F /* EnTeacherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2401E71C387002C2C0F /* EnTeacherInfo.swift */; };
+		042DC24C1E71C387002C2C0F /* EntityBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2411E71C387002C2C0F /* EntityBase.swift */; };
+		042DC24E1E71CF46002C2C0F /* SoapParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC24D1E71CF46002C2C0F /* SoapParameters.swift */; };
 		04BAA61C1E65EF0A005BEC52 /* AttendanceReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */; };
 		04C9689B1E59AAEF0071F774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9689A1E59AAEF0071F774 /* AppDelegate.swift */; };
 		04C968A21E59AAEF0071F774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C968A11E59AAEF0071F774 /* Assets.xcassets */; };
-		04C968A51E59AAEF0071F774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C968A31E59AAEF0071F774 /* LaunchScreen.storyboard */; };
 		04C968B11E59C5600071F774 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C968B01E59C5600071F774 /* HomeController.swift */; };
 		04C968B41E59C58F0071F774 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C968B31E59C58F0071F774 /* RegisterController.swift */; };
-		04D080A41E5DFC3300E5E35B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D080A01E5DFC3300E5E35B /* LaunchScreen.storyboard */; };
-		04D080A51E5DFC3300E5E35B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D080A21E5DFC3300E5E35B /* Main.storyboard */; };
-		04D080A81E5E00F500E5E35B /* HomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D080A71E5E00F500E5E35B /* HomeMenuCell.swift */; };
-		04D080AA1E5E0F1100E5E35B /* HomeActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D080A91E5E0F1100E5E35B /* HomeActivityCell.swift */; };
-		04D29A501E64AA9A00A0A6C8 /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D29A4F1E64AA9A00A0A6C8 /* AttendanceCell.swift */; };
-		04D791021E5CA6570015B8B4 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D791011E5CA6570015B8B4 /* SharedData.swift */; };
-		04E1C1021E6B304800E4AA53 /* ENmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1C1011E6B304800E4AA53 /* ENmark.swift */; };
-		04E1C1041E6B35F800E4AA53 /* ENFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1C1031E6B35F800E4AA53 /* ENFee.swift */; };
-		04ECABC81E6ABB9E00CABBB6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECABC71E6ABB9E00CABBB6 /* APIManager.swift */; };
-		04ECABCB1E6AC25C00CABBB6 /* EntityBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECABCA1E6AC25C00CABBB6 /* EntityBase.swift */; };
-		04ECABCD1E6AC27B00CABBB6 /* EnTeacherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECABCC1E6AC27B00CABBB6 /* EnTeacherInfo.swift */; };
-		04ECABCF1E6AC54F00CABBB6 /* EnStudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECABCE1E6AC54F00CABBB6 /* EnStudentInfo.swift */; };
-		04ECABD11E6AC93900CABBB6 /* EnSchoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECABD01E6AC93900CABBB6 /* EnSchoolInfo.swift */; };
-		04ECABD31E6ACEC700CABBB6 /* EnAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECABD21E6ACEC700CABBB6 /* EnAddress.swift */; };
+		04D359B61E74069C00DB6206 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D359B51E74069C00DB6206 /* APIServices.swift */; };
 		04ECAD551E5B566700F55A13 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD541E5B566700F55A13 /* BaseController.swift */; };
 		04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD561E5B577600F55A13 /* LoginController.swift */; };
-		04ECAD5A1E5B57A600F55A13 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD591E5B57A600F55A13 /* Constants.swift */; };
-		04EE55811E672A3700766515 /* AttendanceReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE55801E672A3700766515 /* AttendanceReportCell.swift */; };
 		04EE55841E67423E00766515 /* MyChildrensController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE55831E67423E00766515 /* MyChildrensController.swift */; };
 		04EE55861E67431900766515 /* MyChildrenListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE55851E67431900766515 /* MyChildrenListController.swift */; };
-		04F0256D1E613D0500E466A9 /* WallMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0256A1E613D0500E466A9 /* WallMenu.swift */; };
-		04F0256E1E613D0500E466A9 /* WallMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F0256B1E613D0500E466A9 /* WallMenu.xib */; };
-		04F0256F1E613D0500E466A9 /* WallMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F0256C1E613D0500E466A9 /* WallMenuCell.xib */; };
 		04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F025711E61DEE300E466A9 /* MyAttendanceController.swift */; };
-		04FB28E01E6C73BC0061E27B /* EnEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB28DF1E6C73BC0061E27B /* EnEvent.swift */; };
-		04FB28E21E6C7A2C0061E27B /* EnAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB28E11E6C7A2C0061E27B /* EnAd.swift */; };
 		FB5EF4B2AF10C12A784FC839 /* Pods_SchoolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89554A6342752B37A52F8EAD /* Pods_SchoolApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		041BF2761E69E97400D85B68 /* MyChildrensListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrensListCell.swift; sourceTree = "<group>"; };
-		042583E41E5F51CD00C05877 /* HomeMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMessageCell.swift; sourceTree = "<group>"; };
-		043862911E6DCFAB001151E0 /* EnParentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnParentInfo.swift; sourceTree = "<group>"; };
-		043862931E6DD5B7001151E0 /* EnHomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnHomeData.swift; sourceTree = "<group>"; };
+		042DC2141E71C2C8002C2C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		042DC2161E71C2C8002C2C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		042DC21B1E71C33E002C2C0F /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
+		042DC21C1E71C33E002C2C0F /* AttendanceReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceReportCell.swift; sourceTree = "<group>"; };
+		042DC21D1E71C33E002C2C0F /* HomeActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeActivityCell.swift; sourceTree = "<group>"; };
+		042DC21E1E71C33E002C2C0F /* HomeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuCell.swift; sourceTree = "<group>"; };
+		042DC21F1E71C33E002C2C0F /* HomeMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMessageCell.swift; sourceTree = "<group>"; };
+		042DC2201E71C33E002C2C0F /* MyChildrensListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrensListCell.swift; sourceTree = "<group>"; };
+		042DC2221E71C33E002C2C0F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		042DC2231E71C33E002C2C0F /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		042DC2251E71C33E002C2C0F /* WallMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallMenu.swift; sourceTree = "<group>"; };
+		042DC2261E71C33E002C2C0F /* WallMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenu.xib; sourceTree = "<group>"; };
+		042DC2271E71C33E002C2C0F /* WallMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenuCell.xib; sourceTree = "<group>"; };
+		042DC2341E71C359002C2C0F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		042DC2371E71C387002C2C0F /* EnAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnAd.swift; sourceTree = "<group>"; };
+		042DC2381E71C387002C2C0F /* EnAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnAddress.swift; sourceTree = "<group>"; };
+		042DC2391E71C387002C2C0F /* EnEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnEvent.swift; sourceTree = "<group>"; };
+		042DC23A1E71C387002C2C0F /* ENFee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENFee.swift; sourceTree = "<group>"; };
+		042DC23B1E71C387002C2C0F /* EnHomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnHomeData.swift; sourceTree = "<group>"; };
+		042DC23C1E71C387002C2C0F /* ENmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENmark.swift; sourceTree = "<group>"; };
+		042DC23D1E71C387002C2C0F /* EnParentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnParentInfo.swift; sourceTree = "<group>"; };
+		042DC23E1E71C387002C2C0F /* EnSchoolInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnSchoolInfo.swift; sourceTree = "<group>"; };
+		042DC23F1E71C387002C2C0F /* EnStudentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnStudentInfo.swift; sourceTree = "<group>"; };
+		042DC2401E71C387002C2C0F /* EnTeacherInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnTeacherInfo.swift; sourceTree = "<group>"; };
+		042DC2411E71C387002C2C0F /* EntityBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityBase.swift; sourceTree = "<group>"; };
+		042DC24D1E71CF46002C2C0F /* SoapParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoapParameters.swift; sourceTree = "<group>"; };
 		04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceReportController.swift; sourceTree = "<group>"; };
 		04C968971E59AAEF0071F774 /* SchoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C9689A1E59AAEF0071F774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C968A11E59AAEF0071F774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04C968A41E59AAEF0071F774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C968A61E59AAEF0071F774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C968B01E59C5600071F774 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		04C968B31E59C58F0071F774 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
-		04D080A11E5DFC3300E5E35B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		04D080A31E5DFC3300E5E35B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		04D080A71E5E00F500E5E35B /* HomeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuCell.swift; sourceTree = "<group>"; };
-		04D080A91E5E0F1100E5E35B /* HomeActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeActivityCell.swift; sourceTree = "<group>"; };
-		04D29A4F1E64AA9A00A0A6C8 /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
-		04D791011E5CA6570015B8B4 /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
-		04E1C1011E6B304800E4AA53 /* ENmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENmark.swift; sourceTree = "<group>"; };
-		04E1C1031E6B35F800E4AA53 /* ENFee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENFee.swift; sourceTree = "<group>"; };
-		04ECABC71E6ABB9E00CABBB6 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		04ECABCA1E6AC25C00CABBB6 /* EntityBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityBase.swift; sourceTree = "<group>"; };
-		04ECABCC1E6AC27B00CABBB6 /* EnTeacherInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnTeacherInfo.swift; sourceTree = "<group>"; };
-		04ECABCE1E6AC54F00CABBB6 /* EnStudentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnStudentInfo.swift; sourceTree = "<group>"; };
-		04ECABD01E6AC93900CABBB6 /* EnSchoolInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnSchoolInfo.swift; sourceTree = "<group>"; };
-		04ECABD21E6ACEC700CABBB6 /* EnAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnAddress.swift; sourceTree = "<group>"; };
+		04D359B51E74069C00DB6206 /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		04ECAD541E5B566700F55A13 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		04ECAD561E5B577600F55A13 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		04ECAD591E5B57A600F55A13 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		04EE55801E672A3700766515 /* AttendanceReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceReportCell.swift; sourceTree = "<group>"; };
 		04EE55831E67423E00766515 /* MyChildrensController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrensController.swift; sourceTree = "<group>"; };
 		04EE55851E67431900766515 /* MyChildrenListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrenListController.swift; sourceTree = "<group>"; };
-		04F0256A1E613D0500E466A9 /* WallMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallMenu.swift; sourceTree = "<group>"; };
-		04F0256B1E613D0500E466A9 /* WallMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenu.xib; sourceTree = "<group>"; };
-		04F0256C1E613D0500E466A9 /* WallMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenuCell.xib; sourceTree = "<group>"; };
 		04F025711E61DEE300E466A9 /* MyAttendanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAttendanceController.swift; sourceTree = "<group>"; };
-		04FB28DF1E6C73BC0061E27B /* EnEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnEvent.swift; sourceTree = "<group>"; };
-		04FB28E11E6C7A2C0061E27B /* EnAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnAd.swift; sourceTree = "<group>"; };
 		85C37AB12F49347DB12B4662 /* Pods-SchoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolApp/Pods-SchoolApp.release.xcconfig"; sourceTree = "<group>"; };
 		89554A6342752B37A52F8EAD /* Pods_SchoolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchoolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7592446119C193AD7D7BF1C /* Pods-SchoolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolApp/Pods-SchoolApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +104,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042DC2121E71C2C8002C2C0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2131E71C2C8002C2C0F /* LaunchScreen.storyboard */,
+				042DC2151E71C2C8002C2C0F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		042DC2191E71C30F002C2C0F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04EE55821E6741DE00766515 /* My Childrens */,
+				04F025701E61DEC500E466A9 /* MyAttendance */,
+				04ECAD541E5B566700F55A13 /* BaseController.swift */,
+				04C968AF1E59C5490071F774 /* Home */,
+				04C968AE1E59C5410071F774 /* Login */,
+				04C968B21E59C57E0071F774 /* Register */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		042DC21A1E71C33E002C2C0F /* ListCells */ = {
+			isa = PBXGroup;
+			children = (
+				042DC21B1E71C33E002C2C0F /* AttendanceCell.swift */,
+				042DC21C1E71C33E002C2C0F /* AttendanceReportCell.swift */,
+				042DC21D1E71C33E002C2C0F /* HomeActivityCell.swift */,
+				042DC21E1E71C33E002C2C0F /* HomeMenuCell.swift */,
+				042DC21F1E71C33E002C2C0F /* HomeMessageCell.swift */,
+				042DC2201E71C33E002C2C0F /* MyChildrensListCell.swift */,
+			);
+			path = ListCells;
+			sourceTree = "<group>";
+		};
+		042DC2211E71C33E002C2C0F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2221E71C33E002C2C0F /* Constants.swift */,
+				042DC2231E71C33E002C2C0F /* SharedData.swift */,
+				042DC2241E71C33E002C2C0F /* WallMenu */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		042DC2241E71C33E002C2C0F /* WallMenu */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2251E71C33E002C2C0F /* WallMenu.swift */,
+				042DC2261E71C33E002C2C0F /* WallMenu.xib */,
+				042DC2271E71C33E002C2C0F /* WallMenuCell.xib */,
+			);
+			path = WallMenu;
+			sourceTree = "<group>";
+		};
+		042DC2331E71C359002C2C0F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2341E71C359002C2C0F /* APIManager.swift */,
+				042DC24D1E71CF46002C2C0F /* SoapParameters.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		042DC2361E71C387002C2C0F /* DataEntities */ = {
+			isa = PBXGroup;
+			children = (
+				042DC2371E71C387002C2C0F /* EnAd.swift */,
+				042DC2381E71C387002C2C0F /* EnAddress.swift */,
+				042DC2391E71C387002C2C0F /* EnEvent.swift */,
+				042DC23A1E71C387002C2C0F /* ENFee.swift */,
+				042DC23B1E71C387002C2C0F /* EnHomeData.swift */,
+				042DC23C1E71C387002C2C0F /* ENmark.swift */,
+				042DC23D1E71C387002C2C0F /* EnParentInfo.swift */,
+				042DC23E1E71C387002C2C0F /* EnSchoolInfo.swift */,
+				042DC23F1E71C387002C2C0F /* EnStudentInfo.swift */,
+				042DC2401E71C387002C2C0F /* EnTeacherInfo.swift */,
+				042DC2411E71C387002C2C0F /* EntityBase.swift */,
+			);
+			path = DataEntities;
+			sourceTree = "<group>";
+		};
 		04C9688E1E59AAEF0071F774 = {
 			isa = PBXGroup;
 			children = (
@@ -123,15 +207,11 @@
 		04C968991E59AAEF0071F774 /* SchoolApp */ = {
 			isa = PBXGroup;
 			children = (
+				042DC2121E71C2C8002C2C0F /* View */,
 				04ECABC91E6AC1F300CABBB6 /* Model */,
-				04ECABC61E6ABB8E00CABBB6 /* Network */,
-				04D080A61E5E008400E5E35B /* ListCells */,
-				04D0809C1E5DFC2A00E5E35B /* Layouts */,
-				04ECAD581E5B578C00F55A13 /* Helpers */,
 				04C968AD1E59C5230071F774 /* Controllers */,
 				04C9689A1E59AAEF0071F774 /* AppDelegate.swift */,
 				04C968A11E59AAEF0071F774 /* Assets.xcassets */,
-				04C968A31E59AAEF0071F774 /* LaunchScreen.storyboard */,
 				04C968A61E59AAEF0071F774 /* Info.plist */,
 			);
 			path = SchoolApp;
@@ -140,12 +220,9 @@
 		04C968AD1E59C5230071F774 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				04EE55821E6741DE00766515 /* My Childrens */,
-				04F025701E61DEC500E466A9 /* MyAttendance */,
-				04ECAD541E5B566700F55A13 /* BaseController.swift */,
-				04C968AF1E59C5490071F774 /* Home */,
-				04C968AE1E59C5410071F774 /* Login */,
-				04C968B21E59C57E0071F774 /* Register */,
+				042DC21A1E71C33E002C2C0F /* ListCells */,
+				042DC2211E71C33E002C2C0F /* Helpers */,
+				042DC2191E71C30F002C2C0F /* ViewControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,70 +251,22 @@
 			name = Register;
 			sourceTree = "<group>";
 		};
-		04D0809C1E5DFC2A00E5E35B /* Layouts */ = {
+		04D359B41E7405F100DB6206 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				04D0809F1E5DFC3300E5E35B /* Base.lproj */,
+				04D359B51E74069C00DB6206 /* APIServices.swift */,
 			);
-			path = Layouts;
-			sourceTree = "<group>";
-		};
-		04D0809F1E5DFC3300E5E35B /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				04D080A01E5DFC3300E5E35B /* LaunchScreen.storyboard */,
-				04D080A21E5DFC3300E5E35B /* Main.storyboard */,
-			);
-			path = Base.lproj;
-			sourceTree = "<group>";
-		};
-		04D080A61E5E008400E5E35B /* ListCells */ = {
-			isa = PBXGroup;
-			children = (
-				04D080A71E5E00F500E5E35B /* HomeMenuCell.swift */,
-				04D080A91E5E0F1100E5E35B /* HomeActivityCell.swift */,
-				042583E41E5F51CD00C05877 /* HomeMessageCell.swift */,
-				04D29A4F1E64AA9A00A0A6C8 /* AttendanceCell.swift */,
-				04EE55801E672A3700766515 /* AttendanceReportCell.swift */,
-				041BF2761E69E97400D85B68 /* MyChildrensListCell.swift */,
-			);
-			path = ListCells;
-			sourceTree = "<group>";
-		};
-		04ECABC61E6ABB8E00CABBB6 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				04ECABC71E6ABB9E00CABBB6 /* APIManager.swift */,
-			);
-			path = Network;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		04ECABC91E6AC1F300CABBB6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04ECABCA1E6AC25C00CABBB6 /* EntityBase.swift */,
-				04ECABCC1E6AC27B00CABBB6 /* EnTeacherInfo.swift */,
-				04ECABCE1E6AC54F00CABBB6 /* EnStudentInfo.swift */,
-				04ECABD01E6AC93900CABBB6 /* EnSchoolInfo.swift */,
-				04ECABD21E6ACEC700CABBB6 /* EnAddress.swift */,
-				04E1C1011E6B304800E4AA53 /* ENmark.swift */,
-				04E1C1031E6B35F800E4AA53 /* ENFee.swift */,
-				04FB28DF1E6C73BC0061E27B /* EnEvent.swift */,
-				04FB28E11E6C7A2C0061E27B /* EnAd.swift */,
-				043862911E6DCFAB001151E0 /* EnParentInfo.swift */,
-				043862931E6DD5B7001151E0 /* EnHomeData.swift */,
+				04D359B41E7405F100DB6206 /* Services */,
+				042DC2361E71C387002C2C0F /* DataEntities */,
+				042DC2331E71C359002C2C0F /* Network */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		04ECAD581E5B578C00F55A13 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				04F025691E613D0500E466A9 /* WallMenu */,
-				04ECAD591E5B57A600F55A13 /* Constants.swift */,
-				04D791011E5CA6570015B8B4 /* SharedData.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		04EE55821E6741DE00766515 /* My Childrens */ = {
@@ -247,16 +276,6 @@
 				04EE55851E67431900766515 /* MyChildrenListController.swift */,
 			);
 			name = "My Childrens";
-			sourceTree = "<group>";
-		};
-		04F025691E613D0500E466A9 /* WallMenu */ = {
-			isa = PBXGroup;
-			children = (
-				04F0256A1E613D0500E466A9 /* WallMenu.swift */,
-				04F0256B1E613D0500E466A9 /* WallMenu.xib */,
-				04F0256C1E613D0500E466A9 /* WallMenuCell.xib */,
-			);
-			path = WallMenu;
 			sourceTree = "<group>";
 		};
 		04F025701E61DEC500E466A9 /* MyAttendance */ = {
@@ -348,12 +367,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F0256F1E613D0500E466A9 /* WallMenuCell.xib in Resources */,
-				04D080A51E5DFC3300E5E35B /* Main.storyboard in Resources */,
-				04D080A41E5DFC3300E5E35B /* LaunchScreen.storyboard in Resources */,
-				04C968A51E59AAEF0071F774 /* LaunchScreen.storyboard in Resources */,
+				042DC2321E71C33E002C2C0F /* WallMenuCell.xib in Resources */,
 				04C968A21E59AAEF0071F774 /* Assets.xcassets in Resources */,
-				04F0256E1E613D0500E466A9 /* WallMenu.xib in Resources */,
+				042DC2181E71C2C8002C2C0F /* Main.storyboard in Resources */,
+				042DC2171E71C2C8002C2C0F /* LaunchScreen.storyboard in Resources */,
+				042DC2311E71C33E002C2C0F /* WallMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,61 +431,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C9689B1E59AAEF0071F774 /* AppDelegate.swift in Sources */,
-				04ECABC81E6ABB9E00CABBB6 /* APIManager.swift in Sources */,
-				04D080AA1E5E0F1100E5E35B /* HomeActivityCell.swift in Sources */,
-				04ECABD31E6ACEC700CABBB6 /* EnAddress.swift in Sources */,
+				042DC2291E71C33E002C2C0F /* AttendanceReportCell.swift in Sources */,
 				04EE55861E67431900766515 /* MyChildrenListController.swift in Sources */,
-				04D791021E5CA6570015B8B4 /* SharedData.swift in Sources */,
-				04F0256D1E613D0500E466A9 /* WallMenu.swift in Sources */,
 				04ECAD551E5B566700F55A13 /* BaseController.swift in Sources */,
-				04D080A81E5E00F500E5E35B /* HomeMenuCell.swift in Sources */,
-				04ECABCF1E6AC54F00CABBB6 /* EnStudentInfo.swift in Sources */,
+				042DC22A1E71C33E002C2C0F /* HomeActivityCell.swift in Sources */,
+				042DC2451E71C387002C2C0F /* ENFee.swift in Sources */,
+				042DC2301E71C33E002C2C0F /* WallMenu.swift in Sources */,
 				04BAA61C1E65EF0A005BEC52 /* AttendanceReportController.swift in Sources */,
-				04E1C1041E6B35F800E4AA53 /* ENFee.swift in Sources */,
 				04C968B41E59C58F0071F774 /* RegisterController.swift in Sources */,
-				042583E51E5F51CD00C05877 /* HomeMessageCell.swift in Sources */,
+				042DC22E1E71C33E002C2C0F /* Constants.swift in Sources */,
+				04D359B61E74069C00DB6206 /* APIServices.swift in Sources */,
+				042DC2351E71C359002C2C0F /* APIManager.swift in Sources */,
 				04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */,
+				042DC22C1E71C33E002C2C0F /* HomeMessageCell.swift in Sources */,
 				04C968B11E59C5600071F774 /* HomeController.swift in Sources */,
-				041BF2771E69E97400D85B68 /* MyChildrensListCell.swift in Sources */,
-				04ECABD11E6AC93900CABBB6 /* EnSchoolInfo.swift in Sources */,
-				04D29A501E64AA9A00A0A6C8 /* AttendanceCell.swift in Sources */,
-				04ECABCB1E6AC25C00CABBB6 /* EntityBase.swift in Sources */,
+				042DC2481E71C387002C2C0F /* EnParentInfo.swift in Sources */,
+				042DC2441E71C387002C2C0F /* EnEvent.swift in Sources */,
+				042DC24B1E71C387002C2C0F /* EnTeacherInfo.swift in Sources */,
 				04EE55841E67423E00766515 /* MyChildrensController.swift in Sources */,
-				04FB28E21E6C7A2C0061E27B /* EnAd.swift in Sources */,
-				04ECABCD1E6AC27B00CABBB6 /* EnTeacherInfo.swift in Sources */,
-				04FB28E01E6C73BC0061E27B /* EnEvent.swift in Sources */,
-				043862921E6DCFAB001151E0 /* EnParentInfo.swift in Sources */,
+				042DC22B1E71C33E002C2C0F /* HomeMenuCell.swift in Sources */,
+				042DC2461E71C387002C2C0F /* EnHomeData.swift in Sources */,
+				042DC2281E71C33E002C2C0F /* AttendanceCell.swift in Sources */,
+				042DC22D1E71C33E002C2C0F /* MyChildrensListCell.swift in Sources */,
+				042DC2421E71C387002C2C0F /* EnAd.swift in Sources */,
+				042DC24E1E71CF46002C2C0F /* SoapParameters.swift in Sources */,
+				042DC2431E71C387002C2C0F /* EnAddress.swift in Sources */,
+				042DC2471E71C387002C2C0F /* ENmark.swift in Sources */,
+				042DC24C1E71C387002C2C0F /* EntityBase.swift in Sources */,
+				042DC24A1E71C387002C2C0F /* EnStudentInfo.swift in Sources */,
+				042DC22F1E71C33E002C2C0F /* SharedData.swift in Sources */,
 				04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */,
-				04E1C1021E6B304800E4AA53 /* ENmark.swift in Sources */,
-				04EE55811E672A3700766515 /* AttendanceReportCell.swift in Sources */,
-				04ECAD5A1E5B57A600F55A13 /* Constants.swift in Sources */,
-				043862941E6DD5B7001151E0 /* EnHomeData.swift in Sources */,
+				042DC2491E71C387002C2C0F /* EnSchoolInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		04C968A31E59AAEF0071F774 /* LaunchScreen.storyboard */ = {
+		042DC2131E71C2C8002C2C0F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04C968A41E59AAEF0071F774 /* Base */,
+				042DC2141E71C2C8002C2C0F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		04D080A01E5DFC3300E5E35B /* LaunchScreen.storyboard */ = {
+		042DC2151E71C2C8002C2C0F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04D080A11E5DFC3300E5E35B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		04D080A21E5DFC3300E5E35B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04D080A31E5DFC3300E5E35B /* Base */,
+				042DC2161E71C2C8002C2C0F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

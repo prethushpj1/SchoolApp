@@ -12,6 +12,8 @@ class BaseController: UIViewController {
 
     let sharedData = SharedData()
     var wallMenu: WallMenu?
+    let apiServices = APIServices()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,6 +62,10 @@ class BaseController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.hideWallMenu()
+    }
+    
+    func getAPIServices() -> APIServices{
+        return apiServices
     }
 }
 

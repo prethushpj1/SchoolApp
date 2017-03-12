@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040F826A1E75B9EE00416B68 /* APIMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F82691E75B9EE00416B68 /* APIMethods.swift */; };
 		042DC2171E71C2C8002C2C0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2131E71C2C8002C2C0F /* LaunchScreen.storyboard */; };
 		042DC2181E71C2C8002C2C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2151E71C2C8002C2C0F /* Main.storyboard */; };
 		042DC2281E71C33E002C2C0F /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC21B1E71C33E002C2C0F /* AttendanceCell.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040F82691E75B9EE00416B68 /* APIMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIMethods.swift; sourceTree = "<group>"; };
 		042DC2141E71C2C8002C2C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		042DC2161E71C2C8002C2C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		042DC21B1E71C33E002C2C0F /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				04D359B51E74069C00DB6206 /* APIServices.swift */,
+				040F82691E75B9EE00416B68 /* APIMethods.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				042DC2351E71C359002C2C0F /* APIManager.swift in Sources */,
 				04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */,
 				042DC22C1E71C33E002C2C0F /* HomeMessageCell.swift in Sources */,
+				040F826A1E75B9EE00416B68 /* APIMethods.swift in Sources */,
 				04C968B11E59C5600071F774 /* HomeController.swift in Sources */,
 				042DC2481E71C387002C2C0F /* EnParentInfo.swift in Sources */,
 				042DC2441E71C387002C2C0F /* EnEvent.swift in Sources */,

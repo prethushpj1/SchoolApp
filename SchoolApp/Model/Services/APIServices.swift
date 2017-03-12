@@ -16,6 +16,6 @@ class APIServices: NSObject {
         let param = SoapParameters(WithKey: "username", andValue: "a")
         param.addParameters(WithKey: "password", andValue: "a")
         
-        self.apiManager.makeRequest(ForMethod: "GetHomeData", andParameters: param)
+        self.apiManager.makeRequest(ForMethod: .getHomeData, andParameters: param)
     }
 }

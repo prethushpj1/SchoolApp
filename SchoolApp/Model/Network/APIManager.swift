@@ -42,13 +42,15 @@ class APIManager: NSObject {
         return encodedRequest
     }
     
-    func makeRequest(ForMethod method: String, andParameters parameters:SoapParameters?){
-        var soapMessage = self.createSOAPBody(WithMethodName: method, andParameters: parameters)
+    func makeRequest(ForMethod method: APIMethods, andParameters parameters:SoapParameters?){
+        let methodString = method.rawValue
+        
+        var soapMessage = self.createSOAPBody(WithMethodName: methodString, andParameters: parameters)
         soapMessage = self.xmlEncode(Request: soapMessage)
         
         var request = URLRequest(url: URL(string: serverURL)!)
         request.addValue("text/xml", forHTTPHeaderField: "Content-Type")
-        request.addValue(SOAPACTION + method, forHTTPHeaderField: "SOAPAction")
+        request.addValue(SOAPACTION + methodString, forHTTPHeaderField: "SOAPAction")
         request.addValue("\(soapMessage.characters.count)", forHTTPHeaderField: "Content-Length")
         request.httpMethod = "POST"
         request.httpBody = soapMessage.data(using: .utf8)

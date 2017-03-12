@@ -10,14 +10,15 @@ import UIKit
 
 class APIManager: NSObject {
     
-    fileprivate let NAMESPACE   = "http://tempuri.org/"
-    fileprivate let serverURL         = "http://betnbid.mobi/IDWCF/VTop.svc"
+    fileprivate let NAMESPACE           = "http://tempuri.org/"
+    fileprivate let SOAPACTION          = "http://tempuri.org/IVTP/"
+    fileprivate let serverURL           = "http://betnbid.mobi/IDWCF/VTop.svc"
     
     fileprivate func createSOAPBody(WithMethodName method: String, andParameters parameters:SoapParameters?) -> String{
         var parameterXML = ""
         if let urParameters = parameters, let keyValueDict = urParameters.getParameters(){
             for (key, value) in keyValueDict {
-                parameterXML = "<\(key)>\(value)</\(key)>"
+                parameterXML += "<\(key)>\(value)</\(key)>"
             }
         }
         
@@ -26,9 +27,9 @@ class APIManager: NSObject {
         let soapMessage = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
         "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">" +
         "<soap:Body>" +
-        "<requestData xmlns=\"\(NAMESPACE)\">" +
+        "<\(method) xmlns=\"\(NAMESPACE)\">" +
         "\(bodyXML)" +
-        "</requestData>" +
+        "</\(method)>" +
         "</soap:Body>" +
         "</soap:Envelope>"
         return soapMessage
@@ -47,7 +48,7 @@ class APIManager: NSObject {
         
         var request = URLRequest(url: URL(string: serverURL)!)
         request.addValue("text/xml", forHTTPHeaderField: "Content-Type")
-        request.addValue(NAMESPACE + "/IVTP" + method, forHTTPHeaderField: "SOAPAction")
+        request.addValue(SOAPACTION + method, forHTTPHeaderField: "SOAPAction")
         request.addValue("\(soapMessage.characters.count)", forHTTPHeaderField: "Content-Length")
         request.httpMethod = "POST"
         request.httpBody = soapMessage.data(using: .utf8)

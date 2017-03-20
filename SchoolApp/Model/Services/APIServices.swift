@@ -18,4 +18,11 @@ class APIServices: NSObject {
         
         self.apiManager.makeRequest(ForMethod: .getHomeData, andParameters: param)
     }
+    
+    func loginWith(userName: String, password: String){
+        let param = SoapParameters(WithKey: "username", andValue: userName)
+        param.addParameters(WithKey: "password", andValue: password)
+        
+        self.apiManager.makeRequest(ForMethod: .parentLogin, andParameters: param)
+    }
 }

@@ -11,28 +11,38 @@ import UIKit
 class APIManager: NSObject {
     
     fileprivate let NAMESPACE           = "http://tempuri.org/"
-    fileprivate let SOAPACTION          = "http://tempuri.org/IVTP/"
+    fileprivate let SOAPACTION          = "http://tempuri.org/IVTOP/"
     fileprivate let serverURL           = "http://betnbid.mobi/IDWCF/VTop.svc"
     
     fileprivate func createSOAPBody(WithMethodName method: String, andParameters parameters:SoapParameters?) -> String{
-        var parameterXML = ""
+        var JSONBody = ""
         if let urParameters = parameters, let keyValueDict = urParameters.getParameters(){
-            for (key, value) in keyValueDict {
-                parameterXML += "<\(key)>\(value)</\(key)>"
+            
+            if let theJSONData = try? JSONSerialization.data(
+                withJSONObject: keyValueDict,
+                options: [.prettyPrinted]) {
+                JSONBody = String(data: theJSONData,
+                                         encoding: .ascii) ?? ""
             }
         }
         
-        let bodyXML = "<\(method)>" + parameterXML + "</\(method)>"
-        
-        let soapMessage = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-        "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">" +
-        "<soap:Body>" +
-        "<\(method) xmlns=\"\(NAMESPACE)\">" +
-        "\(bodyXML)" +
-        "</\(method)>" +
-        "</soap:Body>" +
+        let soapMessage = "<soap:Envelope " +
+        "xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" " +
+        "xmlns:d=\"http://www.w3.org/2001/XMLSchema\" " +
+        "xmlns:c=\"http://schemas.xmlsoap.org/soap/encoding/\" " +
+        "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\"> " +
+        "<soap:Header/> " +
+        "<soap:Body> " +
+        "\(method)" +
+        "\(JSONBody)" +
+        "</soap:Body> " +
         "</soap:Envelope>"
         return soapMessage
+        
+//        let soapMessage =
+//            "\(method)" +
+//            "\(JSONBody)"
+//        return soapMessage
     }
     
     fileprivate func xmlEncode(Request request: String) -> String{
@@ -46,7 +56,8 @@ class APIManager: NSObject {
         let methodString = method.rawValue
         
         var soapMessage = self.createSOAPBody(WithMethodName: methodString, andParameters: parameters)
-        soapMessage = self.xmlEncode(Request: soapMessage)
+        print(soapMessage)
+        //soapMessage = self.xmlEncode(Request: soapMessage)
         
         var request = URLRequest(url: URL(string: serverURL)!)
         request.addValue("text/xml", forHTTPHeaderField: "Content-Type")

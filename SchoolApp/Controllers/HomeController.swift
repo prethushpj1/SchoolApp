@@ -38,7 +38,9 @@ class HomeController: BaseController {
         
         self.btnMenu.addTarget(self, action: #selector(menuButtonPressed), for: .touchUpInside)
         
-        self.getAPIServices().loginWith(userName: "a", password: "a")
+        self.getAPIServices().loginWith(userName: "a", password: "a") { (response) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

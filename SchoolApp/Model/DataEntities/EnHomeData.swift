@@ -11,20 +11,33 @@ import ObjectMapper
 
 class EnHomeData: Mappable {
 
-    var userInfo: EnParentInfo?
-    var events: [EnEvent]?
-    var schoolInfo: EnSchoolInfo?
+    
     var status: Int?
+    var model: EnHomeDataModel?
     
     required init?(map: Map) {
         mapping(map: map)
     }
     
     func mapping(map: Map) {
+        status          <- map["Status"]
+        model           <- map["Data"]
+    }
+}
+
+class EnHomeDataModel: Mappable {
+    
+    var userInfo: EnParentInfo?
+    var events: [EnEvent]?
+    var schoolInfo: EnSchoolInfo?
+    
+    required init?(map: Map) {
+        mapping(map: map)
+    }
+
+    func mapping(map: Map) {
         userInfo        <- map["UserImfo"]
         events          <- map["Events"]
         schoolInfo      <- map["SchoolInfo"]
-        status          <- map["Status"]
-        
     }
 }

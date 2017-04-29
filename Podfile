@@ -2,7 +2,7 @@
 target 'SchoolApp' do
  
   use_frameworks!
-  pod 'ObjectMapper', '~> 2.2'
+  pod 'AlamofireObjectMapper', '~> 4.0'
   
 
 end

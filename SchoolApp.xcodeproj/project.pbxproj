@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040F826A1E75B9EE00416B68 /* APIMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F82691E75B9EE00416B68 /* APIMethods.swift */; };
 		042DC2171E71C2C8002C2C0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2131E71C2C8002C2C0F /* LaunchScreen.storyboard */; };
 		042DC2181E71C2C8002C2C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2151E71C2C8002C2C0F /* Main.storyboard */; };
 		042DC2281E71C33E002C2C0F /* AttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC21B1E71C33E002C2C0F /* AttendanceCell.swift */; };
@@ -21,7 +20,6 @@
 		042DC2301E71C33E002C2C0F /* WallMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2251E71C33E002C2C0F /* WallMenu.swift */; };
 		042DC2311E71C33E002C2C0F /* WallMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2261E71C33E002C2C0F /* WallMenu.xib */; };
 		042DC2321E71C33E002C2C0F /* WallMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042DC2271E71C33E002C2C0F /* WallMenuCell.xib */; };
-		042DC2351E71C359002C2C0F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2341E71C359002C2C0F /* APIManager.swift */; };
 		042DC2421E71C387002C2C0F /* EnAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2371E71C387002C2C0F /* EnAd.swift */; };
 		042DC2431E71C387002C2C0F /* EnAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2381E71C387002C2C0F /* EnAddress.swift */; };
 		042DC2441E71C387002C2C0F /* EnEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2391E71C387002C2C0F /* EnEvent.swift */; };
@@ -33,23 +31,22 @@
 		042DC24A1E71C387002C2C0F /* EnStudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC23F1E71C387002C2C0F /* EnStudentInfo.swift */; };
 		042DC24B1E71C387002C2C0F /* EnTeacherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2401E71C387002C2C0F /* EnTeacherInfo.swift */; };
 		042DC24C1E71C387002C2C0F /* EntityBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC2411E71C387002C2C0F /* EntityBase.swift */; };
-		042DC24E1E71CF46002C2C0F /* SoapParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DC24D1E71CF46002C2C0F /* SoapParameters.swift */; };
 		04BAA61C1E65EF0A005BEC52 /* AttendanceReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */; };
 		04C9689B1E59AAEF0071F774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9689A1E59AAEF0071F774 /* AppDelegate.swift */; };
 		04C968A21E59AAEF0071F774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C968A11E59AAEF0071F774 /* Assets.xcassets */; };
 		04C968B11E59C5600071F774 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C968B01E59C5600071F774 /* HomeController.swift */; };
 		04C968B41E59C58F0071F774 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C968B31E59C58F0071F774 /* RegisterController.swift */; };
-		04D359B61E74069C00DB6206 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D359B51E74069C00DB6206 /* APIServices.swift */; };
 		04ECAD551E5B566700F55A13 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD541E5B566700F55A13 /* BaseController.swift */; };
 		04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECAD561E5B577600F55A13 /* LoginController.swift */; };
 		04EE55841E67423E00766515 /* MyChildrensController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE55831E67423E00766515 /* MyChildrensController.swift */; };
 		04EE55861E67431900766515 /* MyChildrenListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE55851E67431900766515 /* MyChildrenListController.swift */; };
 		04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F025711E61DEE300E466A9 /* MyAttendanceController.swift */; };
+		503500DD1EB491B30019EE46 /* APIMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503500DB1EB491B30019EE46 /* APIMethods.swift */; };
+		503500DE1EB491B30019EE46 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503500DC1EB491B30019EE46 /* APIServices.swift */; };
 		FB5EF4B2AF10C12A784FC839 /* Pods_SchoolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89554A6342752B37A52F8EAD /* Pods_SchoolApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		040F82691E75B9EE00416B68 /* APIMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIMethods.swift; sourceTree = "<group>"; };
 		042DC2141E71C2C8002C2C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		042DC2161E71C2C8002C2C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		042DC21B1E71C33E002C2C0F /* AttendanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceCell.swift; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 		042DC2251E71C33E002C2C0F /* WallMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallMenu.swift; sourceTree = "<group>"; };
 		042DC2261E71C33E002C2C0F /* WallMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenu.xib; sourceTree = "<group>"; };
 		042DC2271E71C33E002C2C0F /* WallMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallMenuCell.xib; sourceTree = "<group>"; };
-		042DC2341E71C359002C2C0F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		042DC2371E71C387002C2C0F /* EnAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnAd.swift; sourceTree = "<group>"; };
 		042DC2381E71C387002C2C0F /* EnAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnAddress.swift; sourceTree = "<group>"; };
 		042DC2391E71C387002C2C0F /* EnEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnEvent.swift; sourceTree = "<group>"; };
@@ -75,7 +71,6 @@
 		042DC23F1E71C387002C2C0F /* EnStudentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnStudentInfo.swift; sourceTree = "<group>"; };
 		042DC2401E71C387002C2C0F /* EnTeacherInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnTeacherInfo.swift; sourceTree = "<group>"; };
 		042DC2411E71C387002C2C0F /* EntityBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityBase.swift; sourceTree = "<group>"; };
-		042DC24D1E71CF46002C2C0F /* SoapParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoapParameters.swift; sourceTree = "<group>"; };
 		04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceReportController.swift; sourceTree = "<group>"; };
 		04C968971E59AAEF0071F774 /* SchoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C9689A1E59AAEF0071F774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,12 +78,13 @@
 		04C968A61E59AAEF0071F774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C968B01E59C5600071F774 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		04C968B31E59C58F0071F774 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
-		04D359B51E74069C00DB6206 /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		04ECAD541E5B566700F55A13 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		04ECAD561E5B577600F55A13 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		04EE55831E67423E00766515 /* MyChildrensController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrensController.swift; sourceTree = "<group>"; };
 		04EE55851E67431900766515 /* MyChildrenListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrenListController.swift; sourceTree = "<group>"; };
 		04F025711E61DEE300E466A9 /* MyAttendanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAttendanceController.swift; sourceTree = "<group>"; };
+		503500DB1EB491B30019EE46 /* APIMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIMethods.swift; path = NetworkServices/APIMethods.swift; sourceTree = "<group>"; };
+		503500DC1EB491B30019EE46 /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIServices.swift; path = NetworkServices/APIServices.swift; sourceTree = "<group>"; };
 		85C37AB12F49347DB12B4662 /* Pods-SchoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolApp/Pods-SchoolApp.release.xcconfig"; sourceTree = "<group>"; };
 		89554A6342752B37A52F8EAD /* Pods_SchoolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchoolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7592446119C193AD7D7BF1C /* Pods-SchoolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolApp/Pods-SchoolApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,15 +155,6 @@
 				042DC2271E71C33E002C2C0F /* WallMenuCell.xib */,
 			);
 			path = WallMenu;
-			sourceTree = "<group>";
-		};
-		042DC2331E71C359002C2C0F /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				042DC2341E71C359002C2C0F /* APIManager.swift */,
-				042DC24D1E71CF46002C2C0F /* SoapParameters.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		042DC2361E71C387002C2C0F /* DataEntities */ = {
@@ -253,21 +240,11 @@
 			name = Register;
 			sourceTree = "<group>";
 		};
-		04D359B41E7405F100DB6206 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				04D359B51E74069C00DB6206 /* APIServices.swift */,
-				040F82691E75B9EE00416B68 /* APIMethods.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		04ECABC91E6AC1F300CABBB6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04D359B41E7405F100DB6206 /* Services */,
+				503500DA1EB491A60019EE46 /* NetworkServices */,
 				042DC2361E71C387002C2C0F /* DataEntities */,
-				042DC2331E71C359002C2C0F /* Network */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +265,15 @@
 				04BAA61B1E65EF0A005BEC52 /* AttendanceReportController.swift */,
 			);
 			name = MyAttendance;
+			sourceTree = "<group>";
+		};
+		503500DA1EB491A60019EE46 /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				503500DB1EB491B30019EE46 /* APIMethods.swift */,
+				503500DC1EB491B30019EE46 /* APIServices.swift */,
+			);
+			name = NetworkServices;
 			sourceTree = "<group>";
 		};
 		83F31D0F540B0F7E19BCBE11 /* Frameworks */ = {
@@ -314,12 +300,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04C968A91E59AAEF0071F774 /* Build configuration list for PBXNativeTarget "SchoolApp" */;
 			buildPhases = (
-				57882C657F175CD1B6460FC2 /* 📦 Check Pods Manifest.lock */,
+				57882C657F175CD1B6460FC2 /* [CP] Check Pods Manifest.lock */,
 				04C968931E59AAEF0071F774 /* Sources */,
 				04C968941E59AAEF0071F774 /* Frameworks */,
 				04C968951E59AAEF0071F774 /* Resources */,
-				DD41164BE86C9A05D81F87E9 /* 📦 Embed Pods Frameworks */,
-				D5D0B3799B65D92DD6732CF6 /* 📦 Copy Pods Resources */,
+				DD41164BE86C9A05D81F87E9 /* [CP] Embed Pods Frameworks */,
+				D5D0B3799B65D92DD6732CF6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,8 +328,8 @@
 				TargetAttributes = {
 					04C968961E59AAEF0071F774 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 6Q5SR5EC28;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 6KLQA7GG45;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -381,29 +367,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		57882C657F175CD1B6460FC2 /* 📦 Check Pods Manifest.lock */ = {
+		57882C657F175CD1B6460FC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D5D0B3799B65D92DD6732CF6 /* 📦 Copy Pods Resources */ = {
+		D5D0B3799B65D92DD6732CF6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,14 +397,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchoolApp/Pods-SchoolApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DD41164BE86C9A05D81F87E9 /* 📦 Embed Pods Frameworks */ = {
+		DD41164BE86C9A05D81F87E9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,11 +429,9 @@
 				04BAA61C1E65EF0A005BEC52 /* AttendanceReportController.swift in Sources */,
 				04C968B41E59C58F0071F774 /* RegisterController.swift in Sources */,
 				042DC22E1E71C33E002C2C0F /* Constants.swift in Sources */,
-				04D359B61E74069C00DB6206 /* APIServices.swift in Sources */,
-				042DC2351E71C359002C2C0F /* APIManager.swift in Sources */,
 				04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */,
+				503500DD1EB491B30019EE46 /* APIMethods.swift in Sources */,
 				042DC22C1E71C33E002C2C0F /* HomeMessageCell.swift in Sources */,
-				040F826A1E75B9EE00416B68 /* APIMethods.swift in Sources */,
 				04C968B11E59C5600071F774 /* HomeController.swift in Sources */,
 				042DC2481E71C387002C2C0F /* EnParentInfo.swift in Sources */,
 				042DC2441E71C387002C2C0F /* EnEvent.swift in Sources */,
@@ -458,10 +442,10 @@
 				042DC2281E71C33E002C2C0F /* AttendanceCell.swift in Sources */,
 				042DC22D1E71C33E002C2C0F /* MyChildrensListCell.swift in Sources */,
 				042DC2421E71C387002C2C0F /* EnAd.swift in Sources */,
-				042DC24E1E71CF46002C2C0F /* SoapParameters.swift in Sources */,
 				042DC2431E71C387002C2C0F /* EnAddress.swift in Sources */,
 				042DC2471E71C387002C2C0F /* ENmark.swift in Sources */,
 				042DC24C1E71C387002C2C0F /* EntityBase.swift in Sources */,
+				503500DE1EB491B30019EE46 /* APIServices.swift in Sources */,
 				042DC24A1E71C387002C2C0F /* EnStudentInfo.swift in Sources */,
 				042DC22F1E71C33E002C2C0F /* SharedData.swift in Sources */,
 				04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */,
@@ -588,12 +572,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6Q5SR5EC28;
+				DEVELOPMENT_TEAM = 6KLQA7GG45;
 				INFOPLIST_FILE = SchoolApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aits.SchoolApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.experion.SchoolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "697d8cda-9495-4a95-9ea3-fa55b38ac5c5";
+				PROVISIONING_PROFILE_SPECIFIER = ExperionWildCardProfile;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -604,12 +590,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6Q5SR5EC28;
+				DEVELOPMENT_TEAM = 6KLQA7GG45;
 				INFOPLIST_FILE = SchoolApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aits.SchoolApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.experion.SchoolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "697d8cda-9495-4a95-9ea3-fa55b38ac5c5";
+				PROVISIONING_PROFILE_SPECIFIER = ExperionWildCardProfile;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

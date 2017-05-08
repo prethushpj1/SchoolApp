@@ -81,11 +81,13 @@ class WallMenu: UIView {
         
         UIView.animate(withDuration: wallMenuDuration) {
             var frameRect = self.frame
-            frameRect.origin.x = self.parentView!.frame.size.width
-            self.frame = frameRect
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.wallMenuDuration, execute: { () -> Void in
-                self.removeFromSuperview()
-            })
+            if let parent = self.parentView{
+                frameRect.origin.x = parent.frame.size.width
+                self.frame = frameRect
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.wallMenuDuration, execute: { () -> Void in
+                    self.removeFromSuperview()
+                })
+            }
         }
     }
     

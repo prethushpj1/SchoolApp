@@ -73,22 +73,22 @@
                                                 <rect key="frame" x="0.0" y="50" width="320" height="80"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzT-mb-wsu">
-                                                        <rect key="frame" x="20" y="0.0" width="271" height="40"/>
+                                                        <rect key="frame" x="20" y="0.0" width="280" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbe-ij-lLS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="271" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                                                 <connections>
                                                                     <action selector="btnStudentAction:" destination="rrK-7Q-j1c" eventType="touchUpInside" id="C5f-JI-mlo"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTD-AZ-ULb">
-                                                                <rect key="frame" x="8" y="4" width="217" height="32"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTD-AZ-ULb">
+                                                                <rect key="frame" x="8" y="4" width="226" height="32"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.11764705882352941" green="0.40392156862745099" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowDown" translatesAutoresizingMaskIntoConstraints="NO" id="O2h-VH-bjB">
-                                                                <rect key="frame" x="233" y="9.5" width="30" height="21"/>
+                                                                <rect key="frame" x="242" y="9.5" width="30" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="U2f-z3-nsa"/>
                                                                     <constraint firstAttribute="height" constant="21" id="bii-nY-bjk"/>
@@ -110,23 +110,54 @@
                                                             <constraint firstAttribute="height" constant="40" id="yGj-Fs-Kub"/>
                                                         </constraints>
                                                     </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoP-OA-Jr9">
+                                                        <rect key="frame" x="20" y="51" width="280" height="21"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.18823529410000001" green="0.25882352939999997" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.53333333333333333" green="0.76078431372549016" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="DoP-OA-Jr9" secondAttribute="trailing" constant="20" id="IT5-aw-B1B"/>
+                                                    <constraint firstAttribute="bottom" secondItem="DoP-OA-Jr9" secondAttribute="bottom" constant="8" id="SU4-UC-b3F"/>
+                                                    <constraint firstItem="DoP-OA-Jr9" firstAttribute="top" secondItem="yzT-mb-wsu" secondAttribute="bottom" constant="11" id="T4r-yX-24r"/>
+                                                    <constraint firstItem="DoP-OA-Jr9" firstAttribute="leading" secondItem="5oN-Lu-m0z" secondAttribute="leading" constant="20" id="XqJ-ho-DfB"/>
                                                     <constraint firstAttribute="height" constant="80" id="Zhu-1f-4rg"/>
                                                     <constraint firstItem="yzT-mb-wsu" firstAttribute="top" secondItem="5oN-Lu-m0z" secondAttribute="top" id="aSP-HM-f49"/>
-                                                    <constraint firstAttribute="trailing" secondItem="yzT-mb-wsu" secondAttribute="trailing" constant="29" id="etC-YS-RiK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yzT-mb-wsu" secondAttribute="trailing" constant="20" id="etC-YS-RiK"/>
                                                     <constraint firstItem="yzT-mb-wsu" firstAttribute="leading" secondItem="5oN-Lu-m0z" secondAttribute="leading" constant="20" id="wzy-qa-2vD"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sjp-II-tZj" userLabel="calendar menu" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                                <rect key="frame" x="0.0" y="130" width="320" height="25"/>
+                                                <color key="backgroundColor" red="0.18823529411764706" green="0.25882352941176467" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="Nut-uu-eZK"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKQ-XZ-mre" userLabel="calendarView" customClass="CVCalendarView" customModule="CVCalendar">
+                                                <rect key="frame" x="0.0" y="155" width="320" height="300"/>
+                                                <color key="backgroundColor" red="0.73333333329999995" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="0OU-qE-91n"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="Sjp-II-tZj" firstAttribute="leading" secondItem="GEh-db-ohd" secondAttribute="leading" id="7kh-3e-PMG"/>
+                                            <constraint firstItem="Sjp-II-tZj" firstAttribute="top" secondItem="5oN-Lu-m0z" secondAttribute="bottom" id="I3d-Fq-lZC"/>
                                             <constraint firstItem="2mU-Mt-oCZ" firstAttribute="leading" secondItem="GEh-db-ohd" secondAttribute="leading" id="Rt7-Gs-jbq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Sjp-II-tZj" secondAttribute="trailing" id="RwJ-Pr-fI7"/>
                                             <constraint firstAttribute="trailing" secondItem="2mU-Mt-oCZ" secondAttribute="trailing" id="UQW-i9-7Mv"/>
+                                            <constraint firstAttribute="trailing" secondItem="JKQ-XZ-mre" secondAttribute="trailing" id="XWu-wr-5wT"/>
                                             <constraint firstItem="5oN-Lu-m0z" firstAttribute="top" secondItem="2mU-Mt-oCZ" secondAttribute="bottom" id="ebv-Ph-Th3"/>
+                                            <constraint firstItem="JKQ-XZ-mre" firstAttribute="top" secondItem="Sjp-II-tZj" secondAttribute="bottom" id="gQA-Sn-BE7"/>
                                             <constraint firstAttribute="trailing" secondItem="5oN-Lu-m0z" secondAttribute="trailing" id="h0j-lp-yHA"/>
                                             <constraint firstItem="2mU-Mt-oCZ" firstAttribute="top" secondItem="GEh-db-ohd" secondAttribute="top" id="s0S-gG-Q4U"/>
+                                            <constraint firstItem="JKQ-XZ-mre" firstAttribute="leading" secondItem="GEh-db-ohd" secondAttribute="leading" id="s6x-wE-uuV"/>
                                             <constraint firstItem="5oN-Lu-m0z" firstAttribute="leading" secondItem="GEh-db-ohd" secondAttribute="leading" id="xKL-EB-9qm"/>
                                         </constraints>
                                     </view>
@@ -152,6 +183,9 @@
                     <connections>
                         <outlet property="btnBack" destination="9Kt-zR-vFo" id="Zla-ah-nJA"/>
                         <outlet property="btnMenu" destination="Raa-dX-Nm0" id="rnT-YL-a60"/>
+                        <outlet property="calendarMenu" destination="Sjp-II-tZj" id="REU-nM-X8D"/>
+                        <outlet property="calendarView" destination="JKQ-XZ-mre" id="j3X-d3-5nz"/>
+                        <outlet property="lblDate" destination="DoP-OA-Jr9" id="1du-MI-P2m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IEI-dq-Twe" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -83,6 +83,7 @@
 		04EE55831E67423E00766515 /* MyChildrensController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrensController.swift; sourceTree = "<group>"; };
 		04EE55851E67431900766515 /* MyChildrenListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrenListController.swift; sourceTree = "<group>"; };
 		04F025711E61DEE300E466A9 /* MyAttendanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAttendanceController.swift; sourceTree = "<group>"; };
+		500C4E021EC0E08100EE98EE /* SchoolApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SchoolApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		503500DB1EB491B30019EE46 /* APIMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIMethods.swift; path = NetworkServices/APIMethods.swift; sourceTree = "<group>"; };
 		503500DC1EB491B30019EE46 /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIServices.swift; path = NetworkServices/APIServices.swift; sourceTree = "<group>"; };
 		85C37AB12F49347DB12B4662 /* Pods-SchoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolApp/Pods-SchoolApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +213,7 @@
 				042DC21A1E71C33E002C2C0F /* ListCells */,
 				042DC2211E71C33E002C2C0F /* Helpers */,
 				042DC2191E71C30F002C2C0F /* ViewControllers */,
+				500C4E021EC0E08100EE98EE /* SchoolApp-Bridging-Header.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -329,6 +331,7 @@
 					04C968961E59AAEF0071F774 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 6KLQA7GG45;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -379,7 +382,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D5D0B3799B65D92DD6732CF6 /* [CP] Copy Pods Resources */ = {
@@ -571,6 +574,7 @@
 			baseConfigurationReference = A7592446119C193AD7D7BF1C /* Pods-SchoolApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6KLQA7GG45;
 				INFOPLIST_FILE = SchoolApp/Info.plist;
@@ -580,6 +584,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "697d8cda-9495-4a95-9ea3-fa55b38ac5c5";
 				PROVISIONING_PROFILE_SPECIFIER = ExperionWildCardProfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "SchoolApp/Controllers/SchoolApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -589,6 +595,7 @@
 			baseConfigurationReference = 85C37AB12F49347DB12B4662 /* Pods-SchoolApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6KLQA7GG45;
 				INFOPLIST_FILE = SchoolApp/Info.plist;
@@ -598,6 +605,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "697d8cda-9495-4a95-9ea3-fa55b38ac5c5";
 				PROVISIONING_PROFILE_SPECIFIER = ExperionWildCardProfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "SchoolApp/Controllers/SchoolApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

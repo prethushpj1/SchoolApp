@@ -65,39 +65,28 @@ class WallMenu: UIView {
         
         var frameRect = view!.frame
         frameRect.size.width = view!.frame.size.width * 0.8
-        frameRect.origin.x = view!.frame.size.width - frameRect.size.width
+        frameRect.origin.x = view!.frame.size.width
         self.frame = frameRect
-        
-        //Open wall menu
-        let transition = CATransition()
-        transition.duration = wallMenuDuration
-        transition.type = kCATransitionMoveIn
-        transition.subtype = kCATransitionFromRight
-        
-        self.isHidden = true
         view!.addSubview(self)
-        self.layer.add(transition, forKey: kCATransition)
-        self.isHidden = false
+
+        UIView.animate(withDuration: wallMenuDuration) {
+            var frameRect = view!.frame
+            frameRect.size.width = view!.frame.size.width * 0.8
+            frameRect.origin.x = view!.frame.size.width - frameRect.size.width
+            self.frame = frameRect
+        }
     }
     
     func hideWallMenu(){
         
-        var frameRect = self.frame
-        frameRect.origin.x = self.frame.size.width
-        self.frame = frameRect
-        
-        //Close wall menu
-        let transition = CATransition()
-        transition.duration = wallMenuDuration
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromLeft
-        
-        self.layer.add(transition, forKey: kCATransition)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + wallMenuDuration, execute: { () -> Void in
-            self.removeFromSuperview()
-        })
-
+        UIView.animate(withDuration: wallMenuDuration) {
+            var frameRect = self.frame
+            frameRect.origin.x = self.parentView!.frame.size.width
+            self.frame = frameRect
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.wallMenuDuration, execute: { () -> Void in
+                self.removeFromSuperview()
+            })
+        }
     }
     
     internal var title: String?{

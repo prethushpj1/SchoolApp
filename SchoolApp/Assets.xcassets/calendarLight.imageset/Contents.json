@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "calendaGreen@1x.png",
+      "filename" : "calendaricon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "calendaGreen@2x.png",
+      "filename" : "calendaricon-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "calendaGreen@3x.png",
+      "filename" : "calendaricon-2.png",
       "scale" : "3x"
     }
   ],

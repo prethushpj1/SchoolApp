@@ -10,8 +10,6 @@ import UIKit
 import ObjectMapper
 
 class EnHomeData: Mappable {
-
-    
     var status: Int?
     var model: EnHomeDataModel?
     
@@ -28,16 +26,12 @@ class EnHomeData: Mappable {
 class EnHomeDataModel: Mappable {
     
     var userInfo: EnParentInfo?
-    var events: [EnEvent]?
-    var schoolInfo: EnSchoolInfo?
     
     required init?(map: Map) {
         mapping(map: map)
     }
 
     func mapping(map: Map) {
-        userInfo        <- map["UserImfo"]
-        events          <- map["Events"]
-        schoolInfo      <- map["SchoolInfo"]
+        userInfo        <- map["HomeData"]
     }
 }

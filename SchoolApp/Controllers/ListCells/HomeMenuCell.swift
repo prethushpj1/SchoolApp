@@ -27,8 +27,8 @@ class HomeMenuCell: UITableViewCell {
     func setDataForIndex(index: Int){
         switch index {
         case 0:
-            lblListTitle.text = "Attendance"
-            imgSideIcon.image = UIImage(named: "loginID")
+            lblListTitle.text = "Absence"
+            imgSideIcon.image = UIImage(named: "Attendance")
             break
         case 1:
             lblListTitle.text = "Fees"
@@ -36,7 +36,7 @@ class HomeMenuCell: UITableViewCell {
             break
         case 2:
             lblListTitle.text = "Marksheet"
-            imgSideIcon.image = UIImage(named: "marksheet")
+            imgSideIcon.image = UIImage(named: "marklist")
         default:
             break
         }

@@ -18,6 +18,9 @@ class HomeController: BaseController {
     @IBOutlet weak var lblSchoolLocation: UILabel!
     @IBOutlet weak var btnMenu: UIButton!
     
+    @IBOutlet weak var btnAnnouncements: UIButton!
+    @IBOutlet weak var btnSchoolEvents: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +42,7 @@ class HomeController: BaseController {
         self.btnMenu.addTarget(self, action: #selector(menuButtonPressed), for: .touchUpInside)
         
         self.getAPIServices().loginWith(userName: "a", password: "a") { (response) in
-            
+            print(response as Any)
         }
     }
 
@@ -52,6 +55,17 @@ class HomeController: BaseController {
         self.showWallMenu()
     }
 
+    @IBAction func btnAnnouncementsAction(_ sender: Any) {
+        btnSchoolEvents.setTitleColor(UIColor.darkGray, for: .normal)
+        btnAnnouncements.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    @IBAction func btnSchoolEventsAction(_ sender: Any) {
+        btnSchoolEvents.setTitleColor(UIColor.white, for: .normal)
+        btnAnnouncements.setTitleColor(UIColor.darkGray, for: .normal)
+    }
+    
+    
 }
 
 extension HomeController: UITableViewDelegate{
@@ -61,12 +75,13 @@ extension HomeController: UITableViewDelegate{
             return 44.0
         }
         else{
-            if indexPath.row % 2 == 0 {
-                return 100.0
-            }
-            else{
-                return 85.0
-            }
+//            if indexPath.row % 2 == 0 {
+//                return 100.0
+//            }
+//            else{
+//                return 85.0
+//            }
+            return 85.0
         }
     }
 }
@@ -81,14 +96,16 @@ extension HomeController: UITableViewDataSource{
             return homeMenuCell
         }
         else{
-            if indexPath.row % 2 == 0 {
-                let homeMenuCell = tableView.dequeueReusableCell(withIdentifier: "homeActivityCell", for: indexPath) as! HomeActivityCell
-                return homeMenuCell
-            }
-            else{
-                let homeMenuCell = tableView.dequeueReusableCell(withIdentifier: "homeMessageCell", for: indexPath) as! HomeMessageCell
-                return homeMenuCell
-            }
+//            if indexPath.row % 2 == 0 {
+//                let homeMenuCell = tableView.dequeueReusableCell(withIdentifier: "homeActivityCell", for: indexPath) as! HomeActivityCell
+//                return homeMenuCell
+//            }
+//            else{
+//                let homeMenuCell = tableView.dequeueReusableCell(withIdentifier: "homeMessageCell", for: indexPath) as! HomeMessageCell
+//                return homeMenuCell
+//            }
+            let homeMenuCell = tableView.dequeueReusableCell(withIdentifier: "homeMessageCell", for: indexPath) as! HomeMessageCell
+            return homeMenuCell
         }
     }
     

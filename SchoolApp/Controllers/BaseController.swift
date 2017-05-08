@@ -21,8 +21,8 @@ class BaseController: UIViewController {
         
         wallMenu = WallMenu.getInstance
         wallMenu?.delegate = self
-        wallMenu?.dataArray = ["Home", "Attendance", "Fees", "Marksheet" , "Time table", "Messages" ,"Exmas", "School Diary", "Log out"]
-        wallMenu?.imageNameArray = ["home" , "tickWhite", "fees-dark", "marklistLight", "calendarLight", "email", "email","email", "logout"]
+        wallMenu?.dataArray = ["Home", "My Children", "Absence Reports", "Mark Sheets" , "Payments", "Messages" ,"Calendar", "Chat", "Log out"]
+        wallMenu?.imageNameArray = ["home" , "children", "Attendance", "marklist", "fees", "messages", "calendarLight","chatIcon", "logout"]
         wallMenu?.title = "School Name"
     }
 
@@ -79,6 +79,10 @@ extension BaseController: WallMenuDelegate{
             }
             break
         case 1:
+            
+            break
+            
+        case 2:
             if  !self.navigationController!.topViewController!.isKind(of: MyAttendanceController.self) {
                 self.openScreen(WithName: .myAttendace, paramters: nil)
             }

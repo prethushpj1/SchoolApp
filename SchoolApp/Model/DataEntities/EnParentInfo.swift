@@ -15,11 +15,11 @@ class EnParentInfo: Mappable {
     var fullName: String?
     var phone: String?
     var emailID: String?
-    var address: EnAddress?
+//    var address: EnAddress?
+//    var children: [EnStudentInfo]?
     var password: String?
     var deviceKey: String?
     var username: String?
-    var children: [EnStudentInfo]?
     var status: Int?
     
     required init?(map: Map) {
@@ -31,10 +31,10 @@ class EnParentInfo: Mappable {
         fullName        <- map["FullName"]
         phone           <- map["Phone"]
         emailID         <- map["EmailID"]
-        address         <- map["Address"]
-        self.password   <- map["Password"]
+        //address         <- map["Address"]
+         //children        <- map["Children"]
+        password        <- map["Password"]
         deviceKey       <- map["DeviceKey"]
-        children        <- map["Children"]
         status          <- map["Status"]
     }
 }

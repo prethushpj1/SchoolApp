@@ -11,4 +11,5 @@ import UIKit
 enum APIMethods: String {
     case getHomeData    = "GetHomeData"
     case parentLogin    = "ParentLogin"
+    case parentRegister = "ParentRegistration"
 }

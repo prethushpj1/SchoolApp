@@ -17,6 +17,7 @@ class EnSchoolInfo: Mappable {
     var emailID: String?
     var address: EnAddress?
     var teachers: [EnTeacherInfo]?
+    var events: [EnEvent]?
     
     required init?(map: Map) {
         mapping(map: map)
@@ -29,5 +30,6 @@ class EnSchoolInfo: Mappable {
         emailID         <- map["EmailID"]
         teachers        <- map["Teachers"]
         address         <- map["Address"]
+        events          <- map["Events"]
     }
 }

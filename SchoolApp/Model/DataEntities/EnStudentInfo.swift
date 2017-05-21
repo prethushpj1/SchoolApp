@@ -25,7 +25,6 @@ class EnStudentInfo: Mappable {
     var marksheet: [ENmark]?
     var absenceInfo: ENAbsence?
     var fees: [ENFee]?
-    var events: [EnEvent]?
     var status: Int?
     
     
@@ -48,7 +47,6 @@ class EnStudentInfo: Mappable {
         marksheet           <- map["Marksheet"]
         absenceInfo         <- map["AbsenceInfo"]
         fees                <- map["Fees"]
-        events              <- map["Events"]
         status              <- map["Status"]
     }
         

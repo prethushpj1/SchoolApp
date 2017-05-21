@@ -16,29 +16,47 @@ class RegisterController: BaseController {
     @IBOutlet weak var vxAddress: UIView!
     @IBOutlet weak var vxPassword: UIView!
     @IBOutlet weak var vxRePassword: UIView!
-    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var vxAddress2: UIView!
+    @IBOutlet weak var vxCity: UIView!
+    @IBOutlet weak var vxState: UIView!
+    @IBOutlet weak var vxcountry: UIView!
+    @IBOutlet weak var vxPincode: UIView!
+    
+    @IBOutlet weak var txtFullName: UITextField!
+    @IBOutlet weak var txtPhone: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtAddress1: UITextField!
+    @IBOutlet weak var txtAddress2: UITextField!
+    @IBOutlet weak var txtCity: UITextField!
+    @IBOutlet weak var txtState: UITextField!
+    @IBOutlet weak var txtCountry: UITextField!
+    @IBOutlet weak var txtPincode: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtRePassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        vxFullName.layer.borderColor = UIColor.gray.cgColor
-        vxFullName.layer.borderWidth = 1.0
+        self.applyBorder(view: vxFullName)
+        self.applyBorder(view: vxContact)
+        self.applyBorder(view: vwEmail)
+        self.applyBorder(view: vxAddress)
+        self.applyBorder(view: vxPassword)
+        self.applyBorder(view: vxRePassword)
+        self.applyBorder(view: vxAddress2)
+        self.applyBorder(view: vxCity)
+        self.applyBorder(view: vxState)
+        self.applyBorder(view: vxcountry)
+        self.applyBorder(view: vxPincode)
         
-        vxContact.layer.borderColor = UIColor.gray.cgColor
-        vxContact.layer.borderWidth = 1.0
-        
-        vwEmail.layer.borderColor = UIColor.gray.cgColor
-        vwEmail.layer.borderWidth = 1.0
-        
-        vxAddress.layer.borderColor = UIColor.gray.cgColor
-        vxAddress.layer.borderWidth = 1.0
-        
-        vxPassword.layer.borderColor = UIColor.gray.cgColor
-        vxPassword.layer.borderWidth = 1.0
-        
-        vxRePassword.layer.borderColor = UIColor.gray.cgColor
-        vxRePassword.layer.borderWidth = 1.0
-        
-        self.backButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
+        self.hideBackButton(status: false)
+        self.hideStatusBar(status: false)
+        self.title = "Register"
+    }
+    
+    func applyBorder(view: UIView){
+        view.layer.borderColor = UIColor.gray.cgColor
+        view.layer.borderWidth = 1.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +65,56 @@ class RegisterController: BaseController {
     }
 
     @IBAction func registerAction(_ sender: Any) {
-        
+        if self.areAllFieldsFilled() {
+            let address = ["Address1": txtAddress1.text!,
+                           "Address2" : txtAddress2.text!,
+                           "City": txtCity.text!,
+                           "Country": txtCountry.text!,
+                           "Pincode" : txtPincode.text!,
+                           "State" : txtState.text!]
+            let parentInfo = ["Address" : address,
+                              "EmailID" : txtEmail.text!,
+                              "FullName" : txtFullName.text!,
+                              "Password" : txtRePassword.text!,
+                              "Phone" : txtPhone.text!,
+                              "UserName" : txtEmail.text!,
+                              "Status" : 1] as [String : Any]
+            
+            self.getAPIServices().registerWith(parameters: ["ParentInfo" :parentInfo], handler: { (response, error) in
+                
+            })
+            
+        }
+    }
+    
+    func areAllFieldsFilled() -> Bool{
+        if let value = txtFullName.text, value.isEmpty {
+            return false
+        }
+        else if let value = txtPhone.text, value.isEmpty{
+            return false
+        }
+        else if let value = txtEmail.text, value.isEmpty{
+            return false
+        }
+        else if let value = txtAddress1.text, value.isEmpty{
+            return false
+        }
+        else if let value = txtAddress2.text, value.isEmpty{
+            return false
+        }
+        else if let value = txtCity.text, value.isEmpty{
+            return false
+        }
+        else if let value = txtState.text, value.isEmpty{
+            return false
+        }
+        else if let value = txtCountry.text, value.isEmpty{
+            return false
+        }
+        else if let value = txtPincode.text, value.isEmpty{
+            return false
+        }
+        return true
     }
 }

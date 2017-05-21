@@ -31,20 +31,45 @@ extension ScreenName{
     }
 }
 
-extension UINavigationBar{
-//    open override func sizeThatFits(_ size: CGSize) -> CGSize {
-//        var rec = self.frame
-//        let screenRect = UIScreen.main.bounds
-//        rec.size.width = screenRect.size.width
-//        rec.size.height = 70
-//        return rec.size;
-//    }
-}
-
 extension Date{
     func shortString() -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM yyyy"
         return dateFormatter.string(from: self)
+    }
+}
+
+extension String{
+    func toDateWithoutTime() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy hh:mm:ss a"
+        let dateObj = dateFormatter.date(from: self)
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.string(from: dateObj ?? Date())
+    }
+    
+    func toDictionary() -> [String: Any]?{
+        if let data = self.data(using: .utf8) {
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
+                return json
+            } catch let error as NSError{
+                print(error.debugDescription)
+                return nil
+            }
+        }
+        return nil
+    }
+    
+    var isEmail: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$",
+                                                options: .caseInsensitive)
+            return regex.firstMatch(in: self,
+                                    options: NSRegularExpression.MatchingOptions(rawValue: 0),
+                                    range: NSMakeRange(0, self.characters.count)) != nil
+        } catch {
+            return false
+        }
     }
 }

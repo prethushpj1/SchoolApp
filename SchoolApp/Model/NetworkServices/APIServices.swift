@@ -13,34 +13,49 @@ import Alamofire
 class APIServices: NSObject {
     
     static let baseURL = "http://betnbid.mobi/IDWCF/vtop.svc/"
-    
-    func loginWith(userName: String, password: String, handler:@escaping (_ response:EnHomeData?) -> Void){
-        let url = APIServices.baseURL + "Parentlogin" + "/\(userName)" + "/\(password)"
-        
-        //        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseObject { (response:DataResponse<EnHomeData>) in
-        //            handler(response.result.value)
-        //        }
-        
-        let session = URLSession(configuration: .default)
-        session.dataTask(with: URL(string: url)!) { (data, response, error) in
+    var rootViewController: BaseController{
+        get{
+            let navController = (AppDelegate.getAppDelegate().window?.rootViewController)! as! UINavigationController
             
-            if error != nil{
-                print(error as Any)
-            }
-            else{
-                if let respData = data{
-                    do {
-//                        let stringData = String(data: respData, encoding: String.Encoding.utf8)
-//                        print(stringData ?? "")
-                        
-                        let parsedData = try JSONSerialization.jsonObject(with: respData, options: []) as! [String:Any]
-                        print(parsedData)
-                        
-                    } catch let error as NSError {
-                        print(error)
-                    }
+            return navController.topViewController as! BaseController
+        }
+    }
+    
+    func startLoadingView(){
+        self.rootViewController.startAnimating(CGSize(width: 50, height: 50), type:.ballRotateChase, color:UIColor.green)
+    }
+    
+    func stopLoadingView(){
+        self.rootViewController.stopAnimating()
+    }
+    func loginWith(userName: String, password: String, handler:@escaping (_ response:EnHomeData?,_ error: Error?) -> Void){
+        
+        self.startLoadingView()
+        Alamofire.request(APIServices.baseURL + "Parentlogin", method: .post, parameters: ["username":userName, "password": password, "SchoolID" : "1"], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            self.stopLoadingView()
+            let jsonString = String(describing: response.value ?? "")
+            if let parserdData = jsonString.toDictionary(){
+                let homeEn = EnHomeData(JSON: parserdData)
+                DispatchQueue.main.async {
+                    handler(homeEn, nil)
                 }
             }
-        }.resume()
+        }
+    }
+    
+    func registerWith(parameters: [String: Any], handler:@escaping (_ response:EnHomeData?,_ error: Error?) -> Void){
+        
+        self.startLoadingView()
+        Alamofire.request(APIServices.baseURL + "ParentRegistration", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            self.stopLoadingView()
+            
+            let jsonString = String(describing: response.value ?? "")
+            if let parserdData = jsonString.toDictionary(){
+                let homeEn = EnHomeData(JSON: parserdData)
+                DispatchQueue.main.async {
+                    handler(homeEn, nil)
+                }
+            }
+        }
     }
 }

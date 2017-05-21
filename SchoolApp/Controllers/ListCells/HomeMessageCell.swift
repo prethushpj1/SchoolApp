@@ -10,10 +10,9 @@ import UIKit
 
 class HomeMessageCell: UITableViewCell {
 
+    @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblMessageDescription: UILabel!
     @IBOutlet weak var lblMessageDate: UILabel!
-    @IBOutlet weak var lblTeacherName: UILabel!
-    @IBOutlet weak var lblSubjectName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,4 +25,9 @@ class HomeMessageCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func set(Data event:EnEvent){
+        self.lblName.text = event.eventName
+        self.lblMessageDescription.text = event.eventDetails
+        self.lblMessageDate.text = event.date?.toDateWithoutTime()
+    }
 }

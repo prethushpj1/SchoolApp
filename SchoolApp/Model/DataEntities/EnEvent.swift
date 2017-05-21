@@ -25,7 +25,7 @@ class EnEvent: Mappable {
     
     func mapping(map: Map) {
         eventID         <- map["EventID"]
-        date            <- map["date"]
+        date            <- map["Date"]
         sender          <- map["Sender"]
         eventName       <- map["EventName"]
         eventDetails    <- map["EventDetails"]

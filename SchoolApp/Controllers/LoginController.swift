@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginController: BaseController {
+class LoginController: BaseController, UITextFieldDelegate {
 
     @IBOutlet weak var vwLoginID: UIView!
     @IBOutlet weak var vwPassword: UIView!
@@ -24,7 +24,12 @@ class LoginController: BaseController {
         vwPassword.layer.borderColor = UIColor.gray.cgColor
         vwPassword.layer.borderWidth = 1.0
         
-        self.hideBackButton()
+        txtLoginID.delegate = self
+        txtPassword.delegate = self
+        
+        self.hideBackButton(status: true)
+        self.hideStatusBar(status: false)
+        self.title = "Login"
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +38,44 @@ class LoginController: BaseController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        //self.getSharedData().isLoggedIn  = true
-        //self.closeScreen()
+        if self.areAllFieldsFilled(){
+            self.getAPIServices().loginWith(userName: txtLoginID.text!, password: txtPassword.text!) { (response, error) in
+                if (error == nil) {
+                    self.getSharedData().username = self.txtLoginID.text!
+                    self.getSharedData().password = self.txtPassword.text!
+                    self.getSharedData().isLoggedIn = true
+                    self.getAppDelegate().homeData = response
+                    self.closeScreen(parameters: ["isLoggedIn" : true])
+                }
+                else{
+                    self.showAlert(WithTitle: nil, Message: "Unable to login. Please try again", OKButtonTitle: "Ok", OKButtonAction: nil, CancelButtonTitle: nil, CancelButtonAction: nil)
+                }
+            }
+        }
     }
 
     @IBAction func registerAction(_ sender: Any) {
-        
+        //self.openScreen(WithName: .register, paramters: [:])
     }
  
+    func areAllFieldsFilled() -> Bool{
+        if let loginEmail = txtLoginID.text, loginEmail.isEmpty {
+            return false
+        }
+        else if let loginPassword = txtPassword.text, loginPassword.isEmpty{
+            return false
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == txtLoginID {
+            txtPassword.becomeFirstResponder()
+        }
+        if textField == txtPassword {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 }
 

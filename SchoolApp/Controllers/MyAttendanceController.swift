@@ -20,7 +20,7 @@ class MyAttendanceController: BaseController, MenuViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.btnBack.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
+        self.btnBack.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
         self.btnMenu.addTarget(self, action: #selector(showWallMenu), for: .touchUpInside)
         
         self.calendarMenu.delegate = self

@@ -15,8 +15,8 @@ class EnParentInfo: Mappable {
     var fullName: String?
     var phone: String?
     var emailID: String?
-//    var address: EnAddress?
-//    var children: [EnStudentInfo]?
+    var address: EnAddress?
+    var children: [EnStudentInfo]?
     var password: String?
     var deviceKey: String?
     var username: String?
@@ -31,8 +31,8 @@ class EnParentInfo: Mappable {
         fullName        <- map["FullName"]
         phone           <- map["Phone"]
         emailID         <- map["EmailID"]
-        //address         <- map["Address"]
-         //children        <- map["Children"]
+        address         <- map["Address"]
+        children        <- map["Children"]
         password        <- map["Password"]
         deviceKey       <- map["DeviceKey"]
         status          <- map["Status"]

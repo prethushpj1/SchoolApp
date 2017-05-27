@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyChildrensController: UIViewController {
+class MyChildrensController: BaseController {
 
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var txtName: UITextField!
@@ -25,6 +25,9 @@ class MyChildrensController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.hideBackButton(status: false)
+        self.hideStatusBar(status: false)
+        self.hideMenuButton(status: false)
     }
 
     override func didReceiveMemoryWarning() {

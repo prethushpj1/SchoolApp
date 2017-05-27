@@ -19,18 +19,25 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     var wallMenu: WallMenu?
     let apiServices = APIServices()
     var delegate: BaseDelegate?
+    var scrollContentView: UIScrollView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        wallMenu = WallMenu.getInstance
+        wallMenu = WallMenu.shared
         wallMenu?.delegate = self
         wallMenu?.dataArray = ["Home", "My Children", "Absence Reports", "Mark Sheets" , "Payments", "Messages" ,"Calendar", "Chat", "Log out"]
         wallMenu?.imageNameArray = ["home" , "children", "Attendance", "marklist", "fees", "messages", "calendarLight","chatIcon", "logout"]
-        wallMenu?.title = "School Name"
+        wallMenu?.menuTitle = "School Name"
         
         self.navigationController?.navigationBar.isTranslucent = false
         self.hideStatusBar(status: true)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        self.hideMenuButton(status: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +45,19 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
         // Dispose of any resources that can be recreated.
     }
     
-    func openScreen(WithName name: ScreenName,
-                    paramters: [AnyHashable: Any]?){
-        self.performSegue(withIdentifier: name.string, sender: self)
+    func openScreen(AsRoot name: ScreenName){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: name.string)
+        let navController = UINavigationController(rootViewController: vc)
+        navController.navigationBar.isTranslucent = true
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
+    }
+    
+    func openScreen(WithName name: ScreenName){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: name.string)
+        //self.performSegue(withIdentifier: name.string, sender: self)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,6 +74,15 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     }
     @objc func closeScreen(parameters: [String: Any]){
         let _ = self.navigationController?.popViewController(animated: true)
+        self.callViewDidResume(parameters: parameters)
+    }
+    
+    @objc func closeScreenToDashboard(parameters: [String: Any]){
+        let _ = self.navigationController?.popToRootViewController(animated: true)
+        self.callViewDidResume(parameters: parameters)
+    }
+    
+    func callViewDidResume(parameters: [String: Any]){
         if let deleg = self.delegate{
             deleg.viewDidResume(parameters: parameters)
         }
@@ -85,16 +111,23 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
         self.navigationController?.setNavigationBarHidden(status, animated: false)
     }
     
+    func hideMenuButton(status: Bool){
+        var view = UIView()
+        if !status {
+            let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 30))
+            btn.addTarget(self, action: #selector(showWallMenu), for: .touchUpInside)
+            btn.setBackgroundImage(UIImage(named: "Menu"), for: .normal)
+            view = btn
+        }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view)
+    }
+    
     func showWallMenu(){
-        wallMenu?.showWallMenuOnView(self.view)
+        wallMenu?.showWallMenu()
     }
     
     func hideWallMenu(){
         wallMenu?.hideWallMenu()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.hideWallMenu()
     }
     
     func getAPIServices() -> APIServices{
@@ -104,36 +137,51 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     func getAppDelegate() -> AppDelegate{
         return AppDelegate.getAppDelegate()
     }
+    
+    // MARK: - Keyboard management
+    func keyBoardWillShow(_ notification: Notification) {
+        
+    }
+
+    func keyboardWillHide(){
+        let contentInsets = UIEdgeInsets.zero
+        self.scrollContentView?.contentInset = contentInsets
+        self.scrollContentView?.scrollIndicatorInsets = contentInsets
+    }
 }
 
 extension BaseController: BaseDelegate{
     func viewDidResume(parameters: [String : Any]) {
-        
+//        let screenName = parameters["openScreen"]
+//        if let screen = screenName {
+//            
+//        }
     }
 }
 
 extension BaseController: WallMenuDelegate{
     func didSelectWallMenuAtIndex(_ index: Int) {
-        self.hideWallMenu()
         switch index {
         case 0:
             if  !self.navigationController!.topViewController!.isKind(of: HomeController.self) {
-                self.closeScreen()
+                self.closeScreenToDashboard(parameters: [:])
             }
             break
         case 1:
-            
+            //if  !self.navigationController!.topViewController!.isKind(of: MyChildrenListController.self) {
+                 self.openScreen(WithName: .myChildrenList)
+            //}
             break
             
         case 2:
-            if  !self.navigationController!.topViewController!.isKind(of: MyAttendanceController.self) {
-                self.openScreen(WithName: .myAttendace, paramters: nil)
-            }
+            //if  !self.navigationController!.topViewController!.isKind(of: MyAttendanceController.self) {
+                self.openScreen(WithName: .myAttendace)
+            //}
             break
             
         case 8:
             self.getSharedData().isLoggedIn = false
-            self.openScreen(WithName: .login, paramters: nil)
+            self.openScreen(WithName: .login)
             break
         default:
             break

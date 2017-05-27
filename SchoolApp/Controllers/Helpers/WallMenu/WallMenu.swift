@@ -13,7 +13,7 @@ protocol WallMenuDelegate: NSObjectProtocol {
 }
 
 /// WallMenu view
-class WallMenu: UIView {
+class WallMenu: UIViewController {
     
     @IBOutlet weak var uxTblMenu: UITableView!
     @IBOutlet weak var lblTitle: UILabel!
@@ -21,37 +21,31 @@ class WallMenu: UIView {
     @IBOutlet weak var btnMenu: UIButton!
     
     fileprivate let wallMenuDuration = 0.4
-    fileprivate var parentView: UIView?
+    fileprivate var parentView: UIViewController?
     internal var dataArray: [String]?
     internal var delegate: WallMenuDelegate?
     internal var imageNameArray: [String]?
-    /**
-     Overriden method from UIView
-     */
+    var menuTitle: String?
     
-    override func awakeFromNib() {
-        
+    static let shared = UIStoryboard(name: "WallMenu", bundle: nil).instantiateViewController(withIdentifier: "WallMenu") as! WallMenu
+    
+    var rootViewController: UIViewController{
+        get{
+            let navController = (AppDelegate.getAppDelegate().window?.rootViewController)! as! UINavigationController
+            
+            return navController.topViewController!
+        }
+    }
+    
+    override func viewDidLoad() {
         uxTblMenu.delegate = self
         uxTblMenu.dataSource = self
-        
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1).cgColor
         
         imgTitle.layer.cornerRadius = imgTitle.frame.size.width / 2
         imgTitle.layer.masksToBounds = true
         
         btnMenu.addTarget(self, action: #selector(hideWallMenu), for: .touchUpInside)
-    }
-
-    /// Call this method to get the object
-    class var getInstance: WallMenu{
-        
-        let obj = Bundle.main.loadNibNamed("WallMenu",
-                                                     owner: self,
-                                                     options: nil)
-        
-        
-        return obj![0] as! WallMenu
+        self.lblTitle.text = self.menuTitle
     }
 
     /**
@@ -59,55 +53,42 @@ class WallMenu: UIView {
      
      - parameter view: view in which wallmenu should be displayed
      */
-    func showWallMenuOnView(_ view: UIView?){
-    
-        parentView = view
+    func showWallMenu(){
         
-        var frameRect = view!.frame
-        frameRect.size.width = view!.frame.size.width * 0.8
-        frameRect.origin.x = view!.frame.size.width
-        self.frame = frameRect
-        view!.addSubview(self)
+        self.rootViewController.view.addSubview(self.view)
+        var frameRect = self.view.frame
+        frameRect.origin.x = self.rootViewController.view.frame.size.width
+        self.view.frame = frameRect
 
-        UIView.animate(withDuration: wallMenuDuration) {
-            var frameRect = view!.frame
-            frameRect.size.width = view!.frame.size.width * 0.8
-            frameRect.origin.x = view!.frame.size.width - frameRect.size.width
-            self.frame = frameRect
+        UIView.animate(withDuration: 0.6) {
+            frameRect.origin.x = 0
+            self.view.frame = frameRect
         }
     }
     
     func hideWallMenu(){
-        
-        UIView.animate(withDuration: wallMenuDuration) {
-            var frameRect = self.frame
-            if let parent = self.parentView{
-                frameRect.origin.x = parent.frame.size.width
-                self.frame = frameRect
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.wallMenuDuration, execute: { () -> Void in
-                    self.removeFromSuperview()
-                })
-            }
-        }
+        self.hideWallMenuCompletion(Handler: nil)
     }
     
-    internal var title: String?{
-        get{
-            return self.lblTitle.text
-        }
-        set(title){
-            self.lblTitle.text = title ?? ""
+    func hideWallMenuCompletion(Handler: (() -> ())?){
+        UIView.animate(withDuration: 0.6, animations: {
+            var frameRect = self.view.frame
+            frameRect.origin.x = self.view.frame.size.width
+            self.view.frame = frameRect
+        }) { (status) in
+            self.view.removeFromSuperview()
+            Handler?()
         }
     }
-    
 }
 
 extension WallMenu: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if let delegate = self.delegate{
-            delegate.didSelectWallMenuAtIndex(indexPath.row)
+        self.hideWallMenuCompletion { 
+            if let delegate = self.delegate{
+                delegate.didSelectWallMenuAtIndex(indexPath.row)
+            }
         }
     }
 }
@@ -125,18 +106,7 @@ extension WallMenu: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "wallMenu") as? WallMenuCell
-        
-        if cell == nil {
-            
-            let obj = Bundle.main.loadNibNamed("WallMenuCell",
-                                                         owner: self,
-                                                         options: nil)
-
-            
-            cell = obj?[0] as? WallMenuCell
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "wallMenuCell") as? WallMenuCell
         cell!.setTitle(dataArray![indexPath.row])
         
         if let imageArray = imageNameArray, imageArray.count > indexPath.row {

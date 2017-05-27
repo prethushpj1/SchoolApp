@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterController: BaseController {
+class RegisterController: BaseController, UITextFieldDelegate {
 
     @IBOutlet weak var vxFullName: UIView!
     @IBOutlet weak var vxContact: UIView!
@@ -33,6 +33,8 @@ class RegisterController: BaseController {
     @IBOutlet weak var txtPincode: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtRePassword: UITextField!
+    @IBOutlet weak var scrollContain: UIScrollView!
+    var activeTextField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,8 @@ class RegisterController: BaseController {
         self.hideBackButton(status: false)
         self.hideStatusBar(status: false)
         self.title = "Register"
+        
+        super.scrollContentView = scrollContain
     }
     
     func applyBorder(view: UIView){
@@ -66,21 +70,12 @@ class RegisterController: BaseController {
 
     @IBAction func registerAction(_ sender: Any) {
         if self.areAllFieldsFilled() {
-            let address = ["Address1": txtAddress1.text!,
-                           "Address2" : txtAddress2.text!,
-                           "City": txtCity.text!,
-                           "Country": txtCountry.text!,
-                           "Pincode" : txtPincode.text!,
-                           "State" : txtState.text!]
-            let parentInfo = ["Address" : address,
-                              "EmailID" : txtEmail.text!,
-                              "FullName" : txtFullName.text!,
-                              "Password" : txtRePassword.text!,
-                              "Phone" : txtPhone.text!,
-                              "UserName" : txtEmail.text!,
-                              "Status" : 1] as [String : Any]
             
-            self.getAPIServices().registerWith(parameters: ["ParentInfo" :parentInfo], handler: { (response, error) in
+            let address = "{\"Address1\":\"\(txtAddress1.text!)\", \"Address2\":\"\(txtAddress2.text!)\",\"City\":\"\(txtCity.text!)\",\"Country\": \"\(txtCountry.text!)\",\"Pincode\" :\"\(txtPincode.text!)\",\"State\":\"\(txtState.text!)\"}"
+            let parentInfo = "{\"Address\" :\(address),\"EmailID\" : \"\(txtEmail.text!)\",\"FullName\" : \"\(txtFullName.text!)\",\"Password\" : \"\(txtRePassword.text!)\",\"Phone\" : \"\(txtPhone.text!)\",\"UserName\" : \"\(txtEmail.text!)\",\"Status\" : 1}"
+            let urlEncodString = parentInfo.urlEncoded()
+            print(urlEncodString)
+            self.getAPIServices().registerWith(parameters: ["ParentInfo" :urlEncodString], handler: { (response, error) in
                 
             })
             
@@ -116,5 +111,73 @@ class RegisterController: BaseController {
             return false
         }
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextField = textField
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == txtFullName {
+            txtPhone.becomeFirstResponder()
+        }
+        if textField == txtPhone {
+            txtEmail.becomeFirstResponder()
+        }
+        if textField == txtEmail {
+            txtAddress1.becomeFirstResponder()
+        }
+        if textField == txtAddress1 {
+            txtAddress2.becomeFirstResponder()
+        }
+        if textField == txtAddress2 {
+            txtCity.becomeFirstResponder()
+        }
+        if textField == txtCity {
+            txtState.becomeFirstResponder()
+        }
+        if textField == txtState {
+            txtCountry.becomeFirstResponder()
+        }
+        if textField == txtCountry {
+            txtPincode.becomeFirstResponder()
+        }
+        if textField == txtPincode {
+            txtPassword.becomeFirstResponder()
+        }
+        if textField == txtPassword {
+            txtRePassword.becomeFirstResponder()
+        }
+        if textField == txtRePassword {
+            txtRePassword.resignFirstResponder()
+        }
+        
+        return true
+    }
+
+    
+    // MARK: - Keyboard management
+    override func keyBoardWillShow(_ notification: Notification) {
+        // get keyboard height and scroll the view up
+        
+        var userInfo = notification.userInfo!
+        let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
+        
+        let keyboardHeight = keyboardSize.height
+        
+        let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0)
+        self.scrollContentView?.contentInset = contentInsets
+        self.scrollContentView?.scrollIndicatorInsets = contentInsets
+        
+        var sRect = self.scrollContentView?.frame
+        sRect?.size.height -= keyboardHeight
+        
+        if let textField = self.activeTextField{
+            let textFieldPos = textField.convert(textField.bounds, from: self.scrollContentView)
+            
+            if let status = sRect?.contains(textFieldPos.origin), status == true {
+                self.scrollContentView?.scrollRectToVisible(textFieldPos, animated: true)
+            }
+        }
     }
 }

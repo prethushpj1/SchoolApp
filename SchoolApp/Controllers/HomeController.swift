@@ -37,17 +37,18 @@ class HomeController: BaseController {
         
         let loggedIn = self.getSharedData().isLoggedIn
         if loggedIn == false {
-            self.openScreen(WithName: .login, paramters: nil)
+            self.openScreen(WithName: .login)
         }
         else{
             self.getAPIServices().loginWith(userName: self.getSharedData().username, password: self.getSharedData().password) { (response, error) in
                 if (error == nil) {
+                    self.getAppDelegate().homeData = response
                     self.eventsList = response?.getHomeDataList().events
                     self.announcementsList = response?.getHomeDataList().announcements
                     self.btnAnnouncementsAction("")
                 }
                 else{
-                    self.openScreen(WithName: .login, paramters: nil)
+                    self.openScreen(WithName: .login)
                 }
             }
         }
@@ -62,6 +63,7 @@ class HomeController: BaseController {
         self.imgHeader.layer.masksToBounds = true
         
         self.btnMenu.addTarget(self, action: #selector(menuButtonPressed), for: .touchUpInside)
+        self.hideStatusBar(status: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +93,7 @@ class HomeController: BaseController {
     
     override func viewDidResume(parameters: [String : Any]) {
         super.viewDidResume(parameters: parameters)
+        self.hideStatusBar(status: true)
         
         let loggedIn = parameters["isLoggedIn"] as? Bool
         if loggedIn == true {
@@ -160,7 +163,7 @@ extension HomeController: UITableViewDataSource{
         if tableView == tblHomeMenu {
             switch indexPath.row {
             case 0:
-                self.openScreen(WithName: .myAttendace, paramters: nil)
+                self.openScreen(WithName: .myAttendace)
                 break
             default:
                 break

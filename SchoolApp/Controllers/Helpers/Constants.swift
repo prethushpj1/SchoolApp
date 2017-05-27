@@ -13,6 +13,7 @@ enum ScreenName{
     case register
     case home
     case myAttendace
+    case myChildrenList
 }
 
 extension ScreenName{
@@ -27,6 +28,8 @@ extension ScreenName{
             return "homeController"
         case .myAttendace:
             return "myAttendance"
+        case .myChildrenList:
+            return "myChildrenList"
         }
     }
 }
@@ -71,5 +74,9 @@ extension String{
         } catch {
             return false
         }
+    }
+    
+    func urlEncoded() -> String{
+        return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     }
 }

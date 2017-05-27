@@ -37,4 +37,14 @@ class EnParentInfo: Mappable {
         deviceKey       <- map["DeviceKey"]
         status          <- map["Status"]
     }
+    
+    func childrenNames() -> [String]?{
+        var names = [String]()
+        if let students = self.children {
+            for student in students {
+                names.append(student.studentName ?? "")
+            }
+        }
+        return names
+    }
 }

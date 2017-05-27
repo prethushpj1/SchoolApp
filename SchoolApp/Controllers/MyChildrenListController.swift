@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyChildrenListController: UIViewController {
+class MyChildrenListController: BaseController {
 
     @IBOutlet weak var tblList: UITableView!
     @IBOutlet weak var btnAddStudent: UIButton!
@@ -19,6 +19,10 @@ class MyChildrenListController: UIViewController {
         // Do any additional setup after loading the view.
         tblList.delegate = self
         tblList.dataSource = self
+        
+        self.hideBackButton(status: false)
+        self.hideStatusBar(status: false)
+        self.hideMenuButton(status: false)
     }
 
     override func didReceiveMemoryWarning() {

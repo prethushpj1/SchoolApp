@@ -30,8 +30,8 @@ class LoginController: BaseController, UITextFieldDelegate {
         txtLoginID.delegate = self
         txtPassword.delegate = self
         
-        self.hideBackButton(status: true)
-        self.hideStatusBar(status: false)
+        self.showBackButton(status: false)
+        self.showStatusBar(status: true)
         self.title = "Login"
         
         super.scrollContentView = self.scrollContent
@@ -57,7 +57,8 @@ class LoginController: BaseController, UITextFieldDelegate {
                     self.getSharedData().password = self.txtPassword.text!
                     self.getSharedData().isLoggedIn = true
                     self.getAppDelegate().homeData = response
-                    self.closeScreen(parameters: ["isLoggedIn" : true])
+                    
+                    self.performSegue(withIdentifier: "loginSuccess", sender: self)
                 }
                 else{
                     self.showAlert(WithTitle: nil, Message: "Unable to login. Please try again", OKButtonTitle: "Ok", OKButtonAction: nil, CancelButtonTitle: nil, CancelButtonAction: nil)
@@ -67,7 +68,7 @@ class LoginController: BaseController, UITextFieldDelegate {
     }
 
     @IBAction func registerAction(_ sender: Any) {
-        //self.openScreen(WithName: .register, paramters: [:])
+        self.performSegue(withIdentifier: ScreenName.register.string, sender: self)
     }
  
     func areAllFieldsFilled() -> Bool{

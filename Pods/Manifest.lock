@@ -7,12 +7,14 @@ PODS:
   - CVCalendar (1.5.0)
   - NVActivityIndicatorView (3.6.1)
   - ObjectMapper (2.2.5)
+  - SideMenu (2.3.2)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - AlamofireObjectMapper (~> 4.0)
   - CVCalendar (~> 1.5.0)
   - NVActivityIndicatorView
+  - SideMenu
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
@@ -21,7 +23,8 @@ SPEC CHECKSUMS:
   CVCalendar: 5d51a7bda1b9439b612de69d86a91a73befa1936
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
+  SideMenu: 3fa07dd05d4bade2b6f9889fb1877e312e1ba319
 
-PODFILE CHECKSUM: a7705752d8fe33bf603aa3b015e9ae697b29261d
+PODFILE CHECKSUM: c01be3f2f0ea923a2d36f000bc0fc0641595fbb5
 
 COCOAPODS: 1.2.1

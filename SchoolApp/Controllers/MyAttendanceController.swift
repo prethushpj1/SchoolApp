@@ -10,7 +10,7 @@ import UIKit
 import ActionSheetPicker_3_0
 import CVCalendar
 
-class MyAttendanceController: BaseController, MenuViewDelegate {
+class MyAttendanceController: UIViewController, MenuViewDelegate {
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var btnMenu: UIButton!
     @IBOutlet weak var calendarMenu: CVCalendarMenuView!
@@ -22,13 +22,18 @@ class MyAttendanceController: BaseController, MenuViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.btnBack.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
-        self.btnMenu.addTarget(self, action: #selector(showWallMenu), for: .touchUpInside)
+        self.showStatusBar(status: true)
+        self.showBackButton(status: true)
+        self.showMenuButton(status: true)
         
         self.calendarMenu.delegate = self
         self.calendarView.delegate = self
         
         self.lblDate.text = self.calendarView.presentedDate.convertedDate()?.shortString() ?? ""
+    }
+    
+    override func backButtonAction(){
+        self.performSegue(withIdentifier: "prepareForUnwind", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

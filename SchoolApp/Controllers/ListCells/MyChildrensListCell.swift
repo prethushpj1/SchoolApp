@@ -25,4 +25,9 @@ class MyChildrensListCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func set(Data childrenInfo: EnStudentInfo){
+        self.lblName.text = childrenInfo.studentName
+        self.lblClass.text = "\(childrenInfo.className ?? "") \(childrenInfo.division ?? "")"
+        self.imgProfile.image = UIImage(named: "Student")
+    }
 }

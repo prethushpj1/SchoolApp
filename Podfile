@@ -7,5 +7,6 @@ target 'SchoolApp' do
   pod 'ActionSheetPicker-3.0'
   pod 'CVCalendar', '~> 1.5.0'
   pod 'NVActivityIndicatorView'  
+  pod 'SideMenu'
 
 end

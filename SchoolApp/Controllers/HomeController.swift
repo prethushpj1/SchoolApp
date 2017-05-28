@@ -62,17 +62,16 @@ class HomeController: BaseController {
         self.imgHeader.layer.cornerRadius = self.imgHeader.frame.size.width / 2
         self.imgHeader.layer.masksToBounds = true
         
-        self.btnMenu.addTarget(self, action: #selector(menuButtonPressed), for: .touchUpInside)
-        self.hideStatusBar(status: true)
+        self.btnMenu.addTarget(self, action: #selector(showWallMenu), for: .touchUpInside)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.showStatusBar(status: false)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func menuButtonPressed(){
-        self.showWallMenu()
     }
 
     @IBAction func btnAnnouncementsAction(_ sender: Any) {
@@ -83,6 +82,10 @@ class HomeController: BaseController {
         self.tblHomeActivity.reloadData()
     }
     
+    @IBAction func prepareForUnwind(_ segue: UIStoryboardSegue){
+        
+    }
+    
     @IBAction func btnSchoolEventsAction(_ sender: Any) {
         btnSchoolEvents.setTitleColor(UIColor.white, for: .normal)
         btnAnnouncements.setTitleColor(UIColor.darkGray, for: .normal)
@@ -91,17 +94,11 @@ class HomeController: BaseController {
         self.tblHomeActivity.reloadData()
     }
     
-    override func viewDidResume(parameters: [String : Any]) {
-        super.viewDidResume(parameters: parameters)
-        self.hideStatusBar(status: true)
-        
-        let loggedIn = parameters["isLoggedIn"] as? Bool
-        if loggedIn == true {
-            if let homeData = self.getAppDelegate().homeData{
-                self.eventsList = homeData.getHomeDataList().events
-                self.announcementsList = homeData.getHomeDataList().announcements
-                self.btnAnnouncementsAction("")
-            }
+    @IBAction func loginSuccess(_ segue: UIStoryboardSegue){
+        if let homeData = self.getAppDelegate().homeData{
+            self.eventsList = homeData.getHomeDataList().events
+            self.announcementsList = homeData.getHomeDataList().announcements
+            self.btnAnnouncementsAction("")
         }
     }
 }
@@ -163,7 +160,7 @@ extension HomeController: UITableViewDataSource{
         if tableView == tblHomeMenu {
             switch indexPath.row {
             case 0:
-                self.openScreen(WithName: .myAttendace)
+                self.performSegue(withIdentifier: ScreenName.myAttendace.string, sender: self)
                 break
             default:
                 break

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyChildrensController: BaseController {
+class MyChildrensController: UIViewController {
 
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var txtName: UITextField!
@@ -18,16 +18,35 @@ class MyChildrensController: BaseController {
     
     @IBOutlet weak var btnMale: UIButton!
     @IBOutlet weak var btnFemale: UIButton!
-    @IBOutlet weak var btnCancel: UIButton!
-    @IBOutlet weak var btnSave: UIButton!
+    
+    var studentData: EnStudentInfo?
+    var isMale = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.hideBackButton(status: false)
-        self.hideStatusBar(status: false)
-        self.hideMenuButton(status: false)
+        self.showStatusBar(status: true)
+        self.showBackButton(status: true)
+        self.showMenuButton(status: true)
+        
+        self.title = "Student Details"
+        
+        self.btnMale.layer.cornerRadius = 10
+        self.btnMale.layer.borderColor = UIColor.gray.cgColor
+        self.btnMale.layer.borderWidth = 1.0
+        
+        self.btnFemale.layer.cornerRadius = 10
+        self.btnFemale.layer.borderColor = UIColor.gray.cgColor
+        self.btnFemale.layer.borderWidth = 1.0
+        
+        self.btnMale.backgroundColor = UIColor.black
+        self.btnFemale.backgroundColor = UIColor.white
+        
+        if let data = self.studentData{
+            self.txtName.text = data.studentName
+            self.txtClass.text = "\(data.className ?? "") \(data.division ?? "")"
+            self.txtRegisterNumber.text = data.rollNo
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +54,19 @@ class MyChildrensController: BaseController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func maleButtonAction(_ sender: Any) {
+        self.btnMale.backgroundColor = UIColor.black
+        self.btnFemale.backgroundColor = UIColor.white
+        
+        self.isMale = true
+    }
+    
+    @IBAction func femaleButtonAction(_ sender: Any) {
+        self.btnMale.backgroundColor = UIColor.white
+        self.btnFemale.backgroundColor = UIColor.black
+        
+        self.isMale = false
+    }
 
     /*
     // MARK: - Navigation

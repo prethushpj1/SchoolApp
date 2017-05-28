@@ -14,6 +14,8 @@ enum ScreenName{
     case home
     case myAttendace
     case myChildrenList
+    case dashboard
+    case addStudent
 }
 
 extension ScreenName{
@@ -30,6 +32,10 @@ extension ScreenName{
             return "myAttendance"
         case .myChildrenList:
             return "myChildrenList"
+        case .dashboard:
+            return "dashboard"
+        case .addStudent:
+            return "addStudent"
         }
     }
 }

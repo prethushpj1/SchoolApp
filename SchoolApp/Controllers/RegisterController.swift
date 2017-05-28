@@ -51,8 +51,8 @@ class RegisterController: BaseController, UITextFieldDelegate {
         self.applyBorder(view: vxcountry)
         self.applyBorder(view: vxPincode)
         
-        self.hideBackButton(status: false)
-        self.hideStatusBar(status: false)
+        self.showBackButton(status: true)
+        self.showStatusBar(status: true)
         self.title = "Register"
         
         super.scrollContentView = scrollContain

@@ -8,10 +8,11 @@
 
 import UIKit
 
-class MyChildrenListController: BaseController {
+class MyChildrenListController: UIViewController {
 
     @IBOutlet weak var tblList: UITableView!
     @IBOutlet weak var btnAddStudent: UIButton!
+    var childrenList: [EnStudentInfo]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +21,21 @@ class MyChildrenListController: BaseController {
         tblList.delegate = self
         tblList.dataSource = self
         
-        self.hideBackButton(status: false)
-        self.hideStatusBar(status: false)
-        self.hideMenuButton(status: false)
+        self.showStatusBar(status: true)
+        self.showBackButton(status: true)
+        self.showMenuButton(status: true)
+        
+        self.title = "Students"
+        
+        childrenList = AppDelegate.getAppDelegate().homeData?.model?.userInfo?.children
+    }
+    
+    @IBAction func addStudent(_ sender: Any) {
+        self.performSegue(withIdentifier: ScreenName.addStudent.string, sender: self)
+    }
+
+    override func backButtonAction(){
+        self.performSegue(withIdentifier: "prepareForUnwind", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +43,11 @@ class MyChildrenListController: BaseController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is MyChildrensController, sender is EnStudentInfo {
+            (segue.destination as? MyChildrensController)?.studentData = sender as? EnStudentInfo
+        }
+    }
 }
 
 extension MyChildrenListController: UITableViewDelegate{
@@ -41,14 +59,22 @@ extension MyChildrenListController: UITableViewDelegate{
 
 extension MyChildrenListController: UITableViewDataSource{
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        if let info = childrenList{
+            return info.count
+        }
+        return 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let attendanceCell = tableView.dequeueReusableCell(withIdentifier: "childrensList", for: indexPath) as! MyChildrensListCell
-        
+        attendanceCell.set(Data: childrenList![indexPath.row])
+        attendanceCell.selectionStyle = .none
         return attendanceCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: ScreenName.addStudent.string, sender: childrenList![indexPath.row])
     }
 }

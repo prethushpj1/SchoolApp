@@ -10,7 +10,7 @@ import UIKit
 import NVActivityIndicatorView
 import SideMenu
 
-class BaseController: UIViewController, NVActivityIndicatorViewable {
+class BaseController: UIViewController {
 
     let sharedData = SharedData()
     let apiServices = APIServices()
@@ -75,7 +75,7 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     }
 }
 
-extension UIViewController{
+extension UIViewController: NVActivityIndicatorViewable{
     
     func showAlert(WithTitle title: String?, Message message: String, OKButtonTitle okTitle: String, OKButtonAction: (() -> ())?, CancelButtonTitle cancelTitle: String?, CancelButtonAction: (() -> ())?){
         

@@ -50,8 +50,23 @@ class MyChildrensController: UIViewController {
         self.btnFemale.backgroundColor = UIColor.white
         
         if let data = self.studentData{
+            print(data.toJSONString(prettyPrint: true)!)
             self.txtName.text = data.studentName
             self.txtClass.text = "\(data.className ?? "") \(data.division ?? "")"
+            txtAge.text = data.dob
+            txtBloodGroup.text = data.bloodGroup
+            txtClass.text = "\(data.className ?? "") \(data.division ?? "")"
+            txtName.text = data.studentName
+            txtRegisterNumber.text = data.registerNumber
+            txtRollNumber.text = data.rollNo
+            txtFirstGuardian.text = data.firstGuardian
+            txtSecondGuardian.text = data.secondGuardian
+            if data.gender == 2 {
+                self.femaleButtonAction(2)
+            }
+            else{
+                self.maleButtonAction(1)
+            }
         }
         
         txtAge.delegate = self
@@ -116,6 +131,28 @@ class MyChildrensController: UIViewController {
         let contentInsets = UIEdgeInsets.zero
         self.scrollContentView?.contentInset = contentInsets
         self.scrollContentView?.scrollIndicatorInsets = contentInsets
+    }
+    @IBAction func submit(_ sender: Any) {
+        
+        var serverData = [String:Any]()
+        serverData["RollNo"] = txtRollNumber.text
+        serverData["FirstGuardian"] = txtFirstGuardian.text
+        serverData["SecondGuardian"] = txtSecondGuardian.text
+        serverData["BloodGroup"] = txtBloodGroup.text
+        serverData["DOB"] = txtAge.text
+        serverData["Class"] = txtClass.text
+        serverData["StudentName"] = txtName.text
+        serverData["RollNo"] = txtRollNumber.text
+        serverData["SchoolInfo"] = ["SchoolID" : "1"]
+        
+        let enStudent = EnStudentInfo(JSON: serverData)
+        print(enStudent?.toJSON() ?? [:])
+        
+//        let api = APIServices()
+//        api.addStudent(data: dataDictionary) { (response, error) in
+//            
+//        }
+        
     }
 }
 

@@ -13,7 +13,7 @@ class ENmark: Mappable {
     
     var subjectID: String?
     var subject: String?
-    var marksObtained: String?
+    var marksObtained: Double?
     var maxMarks: String?
     var grade: String?
     var result: String?

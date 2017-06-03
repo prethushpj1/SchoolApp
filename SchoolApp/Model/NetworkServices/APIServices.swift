@@ -13,11 +13,11 @@ import Alamofire
 class APIServices: NSObject {
     
     static let baseURL = "http://betnbid.mobi/IDWCF/vtop.svc/"
-    var rootViewController: BaseController{
+    var rootViewController: UIViewController{
         get{
             let navController = (AppDelegate.getAppDelegate().window?.rootViewController)! as! UINavigationController
             
-            return navController.topViewController as! BaseController
+            return navController.topViewController!
         }
     }
     
@@ -47,6 +47,21 @@ class APIServices: NSObject {
         
         self.startLoadingView()
         Alamofire.request(APIServices.baseURL + "ParentRegistration", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            self.stopLoadingView()
+            
+            let jsonString = String(describing: response.value ?? "")
+            if let parserdData = jsonString.toDictionary(){
+                let homeEn = EnHomeData(JSON: parserdData)
+                DispatchQueue.main.async {
+                    handler(homeEn, nil)
+                }
+            }
+        }
+    }
+    
+    func addStudent(data: [String: Any], handler:@escaping (_ response:EnHomeData?,_ error: Error?) -> Void){
+        self.startLoadingView()
+        Alamofire.request(APIServices.baseURL + "ManageStudentDetails", method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             self.stopLoadingView()
             
             let jsonString = String(describing: response.value ?? "")

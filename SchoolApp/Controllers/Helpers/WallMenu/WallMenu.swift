@@ -55,6 +55,9 @@ extension WallMenu: UITableViewDelegate{
         case 2:
             self.performSegue(withIdentifier: ScreenName.myAttendace.string, sender: self)
             break
+        case 3:
+            self.performSegue(withIdentifier: ScreenName.marksheet.string, sender: self)
+            break
         default:
             break
         }

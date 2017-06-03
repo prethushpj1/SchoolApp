@@ -41,6 +41,8 @@
 		503500DD1EB491B30019EE46 /* APIMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503500DB1EB491B30019EE46 /* APIMethods.swift */; };
 		503500DE1EB491B30019EE46 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503500DC1EB491B30019EE46 /* APIServices.swift */; };
 		504260C21ED9918100C9134C /* WallMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504260C01ED9918100C9134C /* WallMenu.swift */; };
+		50FE9EE21EE31D880053271A /* MarksheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE9EE11EE31D880053271A /* MarksheetViewController.swift */; };
+		50FE9EE41EE32A6D0053271A /* MarksheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE9EE31EE32A6D0053271A /* MarksheetTableViewCell.swift */; };
 		FB5EF4B2AF10C12A784FC839 /* Pods_SchoolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89554A6342752B37A52F8EAD /* Pods_SchoolApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,9 +81,11 @@
 		04EE55851E67431900766515 /* MyChildrenListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChildrenListController.swift; sourceTree = "<group>"; };
 		04F025711E61DEE300E466A9 /* MyAttendanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAttendanceController.swift; sourceTree = "<group>"; };
 		500C4E021EC0E08100EE98EE /* SchoolApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SchoolApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		503500DB1EB491B30019EE46 /* APIMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIMethods.swift; path = ../Model/NetworkServices/APIMethods.swift; sourceTree = "<group>"; };
+		503500DB1EB491B30019EE46 /* APIMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIMethods.swift; path = NetworkServices/APIMethods.swift; sourceTree = "<group>"; };
 		503500DC1EB491B30019EE46 /* APIServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIServices.swift; path = NetworkServices/APIServices.swift; sourceTree = "<group>"; };
 		504260C01ED9918100C9134C /* WallMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallMenu.swift; sourceTree = "<group>"; };
+		50FE9EE11EE31D880053271A /* MarksheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarksheetViewController.swift; sourceTree = "<group>"; };
+		50FE9EE31EE32A6D0053271A /* MarksheetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarksheetTableViewCell.swift; sourceTree = "<group>"; };
 		85C37AB12F49347DB12B4662 /* Pods-SchoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolApp/Pods-SchoolApp.release.xcconfig"; sourceTree = "<group>"; };
 		89554A6342752B37A52F8EAD /* Pods_SchoolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SchoolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7592446119C193AD7D7BF1C /* Pods-SchoolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolApp/Pods-SchoolApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		042DC2191E71C30F002C2C0F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				50FE9EE01EE31CC00053271A /* Marksheet */,
 				04EE55821E6741DE00766515 /* My Childrens */,
 				04F025701E61DEC500E466A9 /* MyAttendance */,
 				04ECAD541E5B566700F55A13 /* BaseController.swift */,
@@ -130,6 +135,7 @@
 				042DC21E1E71C33E002C2C0F /* HomeMenuCell.swift */,
 				042DC21F1E71C33E002C2C0F /* HomeMessageCell.swift */,
 				042DC2201E71C33E002C2C0F /* MyChildrensListCell.swift */,
+				50FE9EE31EE32A6D0053271A /* MarksheetTableViewCell.swift */,
 			);
 			path = ListCells;
 			sourceTree = "<group>";
@@ -196,7 +202,6 @@
 		04C968AD1E59C5230071F774 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				503500DB1EB491B30019EE46 /* APIMethods.swift */,
 				042DC21A1E71C33E002C2C0F /* ListCells */,
 				042DC2211E71C33E002C2C0F /* Helpers */,
 				042DC2191E71C30F002C2C0F /* ViewControllers */,
@@ -259,6 +264,7 @@
 		503500DA1EB491A60019EE46 /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
+				503500DB1EB491B30019EE46 /* APIMethods.swift */,
 				503500DC1EB491B30019EE46 /* APIServices.swift */,
 			);
 			name = NetworkServices;
@@ -270,6 +276,14 @@
 				504260C01ED9918100C9134C /* WallMenu.swift */,
 			);
 			path = WallMenu;
+			sourceTree = "<group>";
+		};
+		50FE9EE01EE31CC00053271A /* Marksheet */ = {
+			isa = PBXGroup;
+			children = (
+				50FE9EE11EE31D880053271A /* MarksheetViewController.swift */,
+			);
+			name = Marksheet;
 			sourceTree = "<group>";
 		};
 		83F31D0F540B0F7E19BCBE11 /* Frameworks */ = {
@@ -423,6 +437,7 @@
 				042DC2451E71C387002C2C0F /* ENFee.swift in Sources */,
 				04BAA61C1E65EF0A005BEC52 /* AttendanceReportController.swift in Sources */,
 				04C968B41E59C58F0071F774 /* RegisterController.swift in Sources */,
+				50FE9EE41EE32A6D0053271A /* MarksheetTableViewCell.swift in Sources */,
 				042DC22E1E71C33E002C2C0F /* Constants.swift in Sources */,
 				04F025721E61DEE300E466A9 /* MyAttendanceController.swift in Sources */,
 				503500DD1EB491B30019EE46 /* APIMethods.swift in Sources */,
@@ -441,6 +456,7 @@
 				042DC2471E71C387002C2C0F /* ENmark.swift in Sources */,
 				042DC24C1E71C387002C2C0F /* EntityBase.swift in Sources */,
 				503500DE1EB491B30019EE46 /* APIServices.swift in Sources */,
+				50FE9EE21EE31D880053271A /* MarksheetViewController.swift in Sources */,
 				042DC24A1E71C387002C2C0F /* EnStudentInfo.swift in Sources */,
 				042DC22F1E71C33E002C2C0F /* SharedData.swift in Sources */,
 				04ECAD571E5B577600F55A13 /* LoginController.swift in Sources */,

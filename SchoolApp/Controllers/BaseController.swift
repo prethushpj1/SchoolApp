@@ -47,7 +47,6 @@ class BaseController: UIViewController {
     func openScreen(WithName name: ScreenName){
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: name.string)
-        //self.performSegue(withIdentifier: name.string, sender: self)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

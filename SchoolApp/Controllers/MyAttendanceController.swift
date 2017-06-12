@@ -30,6 +30,8 @@ class MyAttendanceController: UIViewController, MenuViewDelegate {
         self.calendarView.delegate = self
         
         self.lblDate.text = self.calendarView.presentedDate.convertedDate()?.shortString() ?? ""
+        
+        self.title = "Attendance"
     }
     
     override func backButtonAction(){

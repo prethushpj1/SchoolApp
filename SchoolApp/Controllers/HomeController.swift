@@ -45,6 +45,7 @@ class HomeController: BaseController {
                     self.getAppDelegate().homeData = response
                     self.eventsList = response?.getHomeDataList().events
                     self.announcementsList = response?.getHomeDataList().announcements
+                    
                     self.btnAnnouncementsAction("")
                 }
                 else{
@@ -101,6 +102,19 @@ class HomeController: BaseController {
             self.btnAnnouncementsAction("")
         }
     }
+    
+    @IBAction func registrationSuccess(_ segue: UIStoryboardSegue){
+        self.getAPIServices().loginWith(userName: self.getSharedData().username, password: self.getSharedData().password) { (response, error) in
+            if (error == nil) {
+                self.getAppDelegate().homeData = response
+                self.eventsList = response?.getHomeDataList().events
+                self.announcementsList = response?.getHomeDataList().announcements
+                
+                self.btnAnnouncementsAction("")
+            }
+        }
+    }
+    
 }
 
 extension HomeController: UITableViewDelegate{
@@ -161,6 +175,12 @@ extension HomeController: UITableViewDataSource{
             switch indexPath.row {
             case 0:
                 self.performSegue(withIdentifier: ScreenName.myAttendace.string, sender: self)
+                break
+            case 1:
+                self.performSegue(withIdentifier: ScreenName.payments.string, sender: self)
+                break
+            case 2:
+                self.performSegue(withIdentifier: ScreenName.marksheet.string, sender: self)
                 break
             default:
                 break

@@ -58,6 +58,17 @@ extension WallMenu: UITableViewDelegate{
         case 3:
             self.performSegue(withIdentifier: ScreenName.marksheet.string, sender: self)
             break
+        case 4:
+            self.performSegue(withIdentifier: ScreenName.payments.string, sender: self)
+            break
+        case 6:
+            self.performSegue(withIdentifier: ScreenName.chatScreen.string, sender: self)
+            break
+        case 7:
+            let shared = SharedData()
+            shared.isLoggedIn =  false
+            self.performSegue(withIdentifier: "logout", sender: self)
+            break
         default:
             break
         }

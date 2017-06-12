@@ -47,4 +47,15 @@ class EnParentInfo: Mappable {
         }
         return names
     }
+    
+    func getSchoolName() -> String{
+        var schoolName = ""
+        if let students = self.children {
+            for student in students {
+                schoolName = student.schoolInfo?.schoolName ?? ""
+                break
+            }
+        }
+        return schoolName
+    }
 }

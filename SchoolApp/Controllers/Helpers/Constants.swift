@@ -17,6 +17,8 @@ enum ScreenName{
     case dashboard
     case addStudent
     case marksheet
+    case payments
+    case chatScreen
 }
 
 extension ScreenName{
@@ -39,6 +41,10 @@ extension ScreenName{
             return "addStudent"
         case .marksheet:
             return "marksheet"
+        case .payments:
+            return "payments"
+        case .chatScreen:
+            return "chatScreen"
         }
     }
 }

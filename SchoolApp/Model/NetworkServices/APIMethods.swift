@@ -9,7 +9,9 @@
 import UIKit
 
 enum APIMethods: String {
-    case getHomeData    = "GetHomeData"
-    case parentLogin    = "ParentLogin"
-    case parentRegister = "ParentRegistration"
+    case getHomeData        = "GetHomeData"
+    case parentLogin        = "ParentLogin"
+    case parentRegister     = "ParentRegistration"
+    case sendChatPrincipal  = "SendMailToSchool"
+    case addStudent         = "ManageStudentDetails"
 }

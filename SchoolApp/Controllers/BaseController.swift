@@ -34,8 +34,8 @@ class BaseController: UIViewController {
         SideMenuManager.menuFadeStatusBar = false
         SideMenuManager.menuPushStyle = .popWhenPossible
         
-        WallMenu.shared.dataArray = ["Home", "My Children", "Absence Reports", "Mark Sheets" , "Payments", "Messages" ,"Calendar", "Chat", "Log out"]
-        WallMenu.shared.imageNameArray = ["home" , "children", "Attendance", "marklist", "fees", "messages", "calendarLight","chatIcon", "logout"]
+        WallMenu.shared.dataArray = ["Home", "My Children", "Absence Reports", "Mark Sheets" , "Payments", "Messages", "Chat", "Log out"]
+        WallMenu.shared.imageNameArray = ["home" , "children", "Attendance", "marklist", "fees", "messages","chatIcon", "logout"]
         WallMenu.shared.menuTitle = "School Name"
     }
 
@@ -58,10 +58,6 @@ class BaseController: UIViewController {
         return apiServices
     }
     
-    func getAppDelegate() -> AppDelegate{
-        return AppDelegate.getAppDelegate()
-    }
-    
     // MARK: - Keyboard management
     func keyBoardWillShow(_ notification: Notification) {
         
@@ -76,7 +72,7 @@ class BaseController: UIViewController {
 
 extension UIViewController: NVActivityIndicatorViewable{
     
-    func showAlert(WithTitle title: String?, Message message: String, OKButtonTitle okTitle: String, OKButtonAction: (() -> ())?, CancelButtonTitle cancelTitle: String?, CancelButtonAction: (() -> ())?){
+    func showAlert(WithTitle title: String? = nil, Message message: String, OKButtonTitle okTitle: String? = "Ok", OKButtonAction: (() -> ())? = nil, CancelButtonTitle cancelTitle: String? = nil, CancelButtonAction: (() -> ())? = nil){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: okTitle, style: .default, handler: { (action) in
@@ -137,5 +133,9 @@ extension UIViewController: NVActivityIndicatorViewable{
         else{
             self.present(SideMenuManager.menuRightNavigationController!, animated: true, completion: nil)
         }
+    }
+    
+    func getAppDelegate() -> AppDelegate{
+        return AppDelegate.getAppDelegate()
     }
 }

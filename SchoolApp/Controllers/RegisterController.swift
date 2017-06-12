@@ -70,13 +70,17 @@ class RegisterController: BaseController, UITextFieldDelegate {
 
     @IBAction func registerAction(_ sender: Any) {
         if self.areAllFieldsFilled() {
-            
             let address = "{\"Address1\":\"\(txtAddress1.text!)\", \"Address2\":\"\(txtAddress2.text!)\",\"City\":\"\(txtCity.text!)\",\"Country\": \"\(txtCountry.text!)\",\"Pincode\" :\"\(txtPincode.text!)\",\"State\":\"\(txtState.text!)\"}"
             let parentInfo = "{\"Address\" :\(address),\"EmailID\" : \"\(txtEmail.text!)\",\"FullName\" : \"\(txtFullName.text!)\",\"Password\" : \"\(txtRePassword.text!)\",\"Phone\" : \"\(txtPhone.text!)\",\"UserName\" : \"\(txtEmail.text!)\",\"Status\" : 1}"
             let urlEncodString = parentInfo.urlEncoded()
-            print(urlEncodString)
             self.getAPIServices().registerWith(parameters: ["ParentInfo" :urlEncodString], handler: { (response, error) in
-                
+                if (error == nil){
+                    self.showAlert(Message: "Registration success", OKButtonAction: {
+                        self.getSharedData().username = self.txtEmail.text ?? ""
+                        self.getSharedData().password = self.txtRePassword.text ?? ""
+                        self.performSegue(withIdentifier: "registrationSuccess", sender: self)
+                    })
+                }
             })
             
         }

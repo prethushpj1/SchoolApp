@@ -61,7 +61,7 @@ class LoginController: BaseController, UITextFieldDelegate {
                     self.performSegue(withIdentifier: "loginSuccess", sender: self)
                 }
                 else{
-                    self.showAlert(WithTitle: nil, Message: "Unable to login. Please try again", OKButtonTitle: "Ok", OKButtonAction: nil, CancelButtonTitle: nil, CancelButtonAction: nil)
+                    self.showAlert(Message: "Unable to login. Please try again")
                 }
             }
         }

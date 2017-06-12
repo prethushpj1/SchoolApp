@@ -28,10 +28,11 @@ class APIServices: NSObject {
     func stopLoadingView(){
         self.rootViewController.stopAnimating()
     }
+    
     func loginWith(userName: String, password: String, handler:@escaping (_ response:EnHomeData?,_ error: Error?) -> Void){
         
         self.startLoadingView()
-        Alamofire.request(APIServices.baseURL + "Parentlogin", method: .post, parameters: ["username":userName, "password": password, "SchoolID" : "1"], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+        Alamofire.request(APIServices.baseURL + APIMethods.parentLogin.rawValue, method: .post, parameters: ["username":userName, "password": password, "SchoolID" : "1"], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             self.stopLoadingView()
             let jsonString = String(describing: response.value ?? "")
             if let parserdData = jsonString.toDictionary(){
@@ -46,7 +47,7 @@ class APIServices: NSObject {
     func registerWith(parameters: [String: Any], handler:@escaping (_ response:EnHomeData?,_ error: Error?) -> Void){
         
         self.startLoadingView()
-        Alamofire.request(APIServices.baseURL + "ParentRegistration", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+        Alamofire.request(APIServices.baseURL + APIMethods.parentRegister.rawValue, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             self.stopLoadingView()
             
             let jsonString = String(describing: response.value ?? "")
@@ -61,7 +62,22 @@ class APIServices: NSObject {
     
     func addStudent(data: [String: Any], handler:@escaping (_ response:EnHomeData?,_ error: Error?) -> Void){
         self.startLoadingView()
-        Alamofire.request(APIServices.baseURL + "ManageStudentDetails", method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+        Alamofire.request(APIServices.baseURL + APIMethods.addStudent.rawValue, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            self.stopLoadingView()
+            
+            let jsonString = String(describing: response.value ?? "")
+            if let parserdData = jsonString.toDictionary(){
+                let homeEn = EnHomeData(JSON: parserdData)
+                DispatchQueue.main.async {
+                    handler(homeEn, nil)
+                }
+            }
+        }
+    }
+    
+    func sendChatToPrincipal(data: [String: Any], handler:@escaping (_ response:EnHomeData?,_ error: Error?) -> Void){
+        self.startLoadingView()
+        Alamofire.request(APIServices.baseURL + APIMethods.sendChatPrincipal.rawValue, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             self.stopLoadingView()
             
             let jsonString = String(describing: response.value ?? "")

@@ -135,24 +135,15 @@ class MyChildrensController: UIViewController {
     @IBAction func submit(_ sender: Any) {
         
         var serverData = [String:Any]()
-        serverData["RollNo"] = txtRollNumber.text
-        serverData["FirstGuardian"] = txtFirstGuardian.text
-        serverData["SecondGuardian"] = txtSecondGuardian.text
-        serverData["BloodGroup"] = txtBloodGroup.text
-        serverData["DOB"] = txtAge.text
-        serverData["Class"] = txtClass.text
-        serverData["StudentName"] = txtName.text
-        serverData["RollNo"] = txtRollNumber.text
-        serverData["SchoolInfo"] = ["SchoolID" : "1"]
         
-        let enStudent = EnStudentInfo(JSON: serverData)
-        print(enStudent?.toJSON() ?? [:])
+        let strData = "{\"BloodGroup\":\"\(txtBloodGroup.text ?? "")\",\"ClassID\":\"1\",\"DOB\":\"\(txtAge.text ?? "")\",\"FirstGuardian\":\"\(txtFirstGuardian.text ?? "")\",\"RegisterNumber\":\"\(txtRegisterNumber.text ?? "")\",\"RollNo\":\"\(txtRollNumber.text ?? "")\",\"SchoolInfo\":{\"SchoolID\":\"1\"},\"SecondGuardian\":\"\(txtSecondGuardian.text ?? "")\",\"Sex\":\"\(self.isMale ? 1 : 2)\",\"StudentName\":\"\(txtName.text ?? "")\",\"Status\":0}"
         
-//        let api = APIServices()
-//        api.addStudent(data: dataDictionary) { (response, error) in
-//            
-//        }
-        
+        serverData["Student"] = strData.urlEncoded()
+        serverData["ParentID"] = 1
+        let api = APIServices()
+        api.addStudent(data: serverData) { (response, error) in
+            self.getAppDelegate().homeData = response
+        }
     }
 }
 
@@ -210,5 +201,10 @@ extension MyChildrensController: UITextFieldDelegate{
             textField.resignFirstResponder()
         }
         return true
+    }
+    
+    func show(WithTitle title: String? = nil, andMessage message: String?, OKcompletion: (() -> Void)? = nil, CancelCompletion: (() -> Void)? = nil)
+    {
+        
     }
 }

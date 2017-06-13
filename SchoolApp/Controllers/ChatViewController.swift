@@ -62,11 +62,36 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendChatAction(_ sender: Any) {
-        let data = ["Message" : txtBody.text ?? "", "SchoolID" : "1", "Sender" : lblParentName.text ?? "", "StudentID" : self.selectedStudent?.studentID ?? "" , "Subject" : lblSubject.text ?? ""] as [String : Any]
-        let apiServices = APIServices()
-        apiServices.sendChatToPrincipal(data: data) { (data, error) in
+        if self.areAllFieldsFilled() {
+            let dataString = "{\"Message\":\"\(txtBody.text!)\",\"SchoolID\":\"1\",\"Sender\":\"\(lblParentName.text!)\",\"StudentID\":\"\(self.selectedStudent?.studentID ?? "")\",\"Subject\":\"\(lblSubject.text!)\"}"
             
+            let data = ["mail" : dataString.urlEncoded()] as [String : Any]
+            let apiServices = APIServices()
+            apiServices.sendChatToPrincipal(data: data) { (data, error) in
+                if error == nil{
+                    self.showAlert(Message: "Message sent to the Principal")
+                }
+            }
         }
+    }
+    
+    func areAllFieldsFilled() -> Bool{
+        if let value = self.selectedStudent?.studentID, value.isEmpty {
+            return false
+        }
+        
+        if let value = lblParentName.text, value.isEmpty {
+            return false
+        }
+        if let value = lblSubject.text, value.isEmpty {
+            return false
+        }
+        
+        if let value = txtBody.text, value.isEmpty {
+            return false
+        }
+        
+        return true
     }
 }
 

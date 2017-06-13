@@ -75,16 +75,15 @@ class APIServices: NSObject {
         }
     }
     
-    func sendChatToPrincipal(data: [String: Any], handler:@escaping (_ response:EnHomeData?,_ error: Error?) -> Void){
+    func sendChatToPrincipal(data: [String: Any], handler:@escaping (_ response:[String: Any]?,_ error: Error?) -> Void){
         self.startLoadingView()
         Alamofire.request(APIServices.baseURL + APIMethods.sendChatPrincipal.rawValue, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             self.stopLoadingView()
             
             let jsonString = String(describing: response.value ?? "")
             if let parserdData = jsonString.toDictionary(){
-                let homeEn = EnHomeData(JSON: parserdData)
                 DispatchQueue.main.async {
-                    handler(homeEn, nil)
+                    handler(parserdData, nil)
                 }
             }
         }

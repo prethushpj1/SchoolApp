@@ -134,16 +134,51 @@ class MyChildrensController: UIViewController {
     }
     @IBAction func submit(_ sender: Any) {
         
-        var serverData = [String:Any]()
-        
-        let strData = "{\"BloodGroup\":\"\(txtBloodGroup.text ?? "")\",\"ClassID\":\"1\",\"DOB\":\"\(txtAge.text ?? "")\",\"FirstGuardian\":\"\(txtFirstGuardian.text ?? "")\",\"RegisterNumber\":\"\(txtRegisterNumber.text ?? "")\",\"RollNo\":\"\(txtRollNumber.text ?? "")\",\"SchoolInfo\":{\"SchoolID\":\"1\"},\"SecondGuardian\":\"\(txtSecondGuardian.text ?? "")\",\"Sex\":\"\(self.isMale ? 1 : 2)\",\"StudentName\":\"\(txtName.text ?? "")\",\"Status\":0}"
-        
-        serverData["Student"] = strData.urlEncoded()
-        serverData["ParentID"] = 1
-        let api = APIServices()
-        api.addStudent(data: serverData) { (response, error) in
-            self.getAppDelegate().homeData = response
+        if self.areAllFieldsFilled() {
+            var serverData = [String:Any]()
+            
+            let strData = "{\"BloodGroup\":\"\(txtBloodGroup.text!)\",\"ClassID\":\"1\",\"DOB\":\"\(txtAge.text!)\",\"FirstGuardian\":\"\(txtFirstGuardian.text!)\",\"RegisterNumber\":\"\(txtRegisterNumber.text!)\",\"RollNo\":\"\(txtRollNumber.text!)\",\"SchoolInfo\":{\"SchoolID\":\"1\"},\"SecondGuardian\":\"\(txtSecondGuardian.text!)\",\"Sex\":\"\(self.isMale ? 1 : 2)\",\"StudentName\":\"\(txtName.text!)\",\"Status\":0}"
+            
+            serverData["Student"] = strData.urlEncoded()
+            serverData["ParentID"] = 1
+            let api = APIServices()
+            api.addStudent(data: serverData) { (response, error) in
+                self.showAlert(Message: "Student added successfully", OKButtonAction: {
+                    self.getAppDelegate().homeData = response
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
         }
+    }
+    
+    func areAllFieldsFilled() -> Bool{
+        
+        if let value = self.txtName.text, value.isEmpty {
+            return false
+        }
+        if let value = self.txtAge.text, value.isEmpty {
+            return false
+        }
+        if let value = self.txtBloodGroup.text, value.isEmpty {
+            return false
+        }
+        if let value = self.txtAge.text, value.isEmpty {
+            return false
+        }
+        if let value = self.txtRegisterNumber.text, value.isEmpty {
+            return false
+        }
+        if let value = self.txtRollNumber.text, value.isEmpty {
+            return false
+        }
+        if let value = self.txtFirstGuardian.text, value.isEmpty {
+            return false
+        }
+        if let value = self.txtSecondGuardian.text, value.isEmpty {
+            return false
+        }
+        
+        return true
     }
 }
 
